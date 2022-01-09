@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+    .ltr {
+        direction: ltr;
+    }
+
+    .rtl {
+        direction: rtl;
+    }
+
+    .leading-0 {
+        line-height: 0;
+    }
+
+    .text-fill-transparent {
+        -webkit-text-fill-color: transparent;
+        text-fill-color: transparent;
+    }
+
+    .text-fill-dark {
+        -webkit-text-fill-color: #00000000;
+        text-fill-color: #00000000;
+    }
+
+    .bg-bottom-center {
+        background-position: bottom center;
+    }
+
+    .bg-top-center {
+        background-position: top center;
+    }
+
+}
+
+.scrollbar::-webkit-scrollbar {
+    @apply w-1 h-1;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-none absolute;
+}
+
+
+.dark .scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-white/20;
+}
+
+.on-hover-scroll::-webkit-scrollbar {
+    @apply w-1 h-1;
+}
+
+
+
+.on-hover-scroll::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-none absolute;
+}
+
+.on-hover-scroll::-webkit-scrollbar-thumb {
+    @apply bg-transparent transition-all duration-200 ease-in-out rounded-full;
+
+
+}
+
+
+
+.dark .on-hover-scroll:hover::-webkit-scrollbar-thumb {
+    @apply bg-white/20;
+}
+
+
+@layer utilities{
+    .scroll-thick::-webkit-scrollbar {
+        @apply w-2 h-2;
+    }
+}
+
+[x-cloak] {
+    @apply hidden;
+}
+
+
+
+.menuOpen{
+    @screen md{
+        @apply flex !important
+    }
+}
+
+body {
+    &.openSideBar {
+        .sidebar {
+            @media (max-width:1023px) {
+                @apply translate-x-0;
+            }
+        }
+    }
+}
+
+
+
+
+
+/*Sidebar collapse*/
+.sidebar {
+
+    &.sidebar-collapse {
+        &:not(:hover) {
+            @apply w-20;
+
+            .logo-sect {
+                @apply px-0
+            }
+
+            .sidebar-logo,
+            .toggle-sidebar,
+            .sidebar-label,
+            .menu-open>.sub-menu,
+            .angle {
+                @apply hidden !important;
+
+            }
+
+            .sidebar-icon {
+                @apply block !important;
+            }
+
+            .logo-wrap,
+            .label-wrap,
+            .sidebar-btn {
+                @apply justify-center gap-0
+            }
+        }
+    }
+}
+
+
+/*Country code CSS optional  */
+.iti--separate-dial-code .iti__flag-container:hover .iti__selected-flag {
+    @apply bg-transparent
+}
+
+.iti--separate-dial-code .iti__selected-flag {
+    @apply border-0 shadow-none bg-transparent
+}
+
+.dark .iti__selected-dial-code {
+    @apply text-white/70
+}
+
+.dark .iti__arrow {
+    border-top-color: rgb(255 255 255 / 70%)
+}
+
+.iti__flag {
+    @apply border-0 shadow-none bg-transparent
+}
+
+
+
+    .apexcharts-canvas{ 
+        @apply w-auto max-w-full !important;
+        svg{
+            @apply w-full max-w-md !important;
+            foreignObject{
+                @apply w-full !important;
+            }
+        }
+    }
+
+
+.dark #chart {
+    .apexcharts-legend-text {
+        @apply text-white/80 !important;
+    }
+}
+
+.select2 {
+    @apply opacity-0 absolute top-0 inset-0 w-full flex items-stretch !important;
+
+    .selection {
+        @apply flex-1 flex items-stretch;
+
+        .select2-selection {
+            @apply flex-1 flex items-stretch h-auto ;
+
+            .select2-selection__rendered {
+                @apply leading-none flex-1 flex items-center !important;
+
+            }
+        }
+    }
+}
+
+.dark .select2 {
+    .selection {
+        .select2-selection {
+            @apply text-white/80 ;
+            .select2-selection__rendered {
+                @apply  text-white/60 !important;
+            }
+        }
+    }
+}
+
+
+ 
+
+
+.dark .select2-dropdown {
+    @apply  ring-white/5  !important
+}
+
+
+.dark .select2-results__option{
+    @apply  text-white/80 !important;
+    &:hover {
+        @apply bg-white/5 text-white !important
+    }
+  
+}
+
+
+.select2-container--default .select2-results__option[aria-selected=true] {
+    @apply bg-transparent  !important;
+
+   
+}
+
+.dark .select2-container--default .select2-results__option[aria-selected=true] {
+    @apply bg-transparent text-white/90 !important;
+
+    &:hover {
+        @apply bg-white/5 text-white !important
+    }
+}
+
+.select2-container--default .select2-results>.select2-results__options::-webkit-scrollbar {
+    @apply w-1 h-1;
+}
+
+.select2-container--default .select2-results>.select2-results__options::-webkit-scrollbar-track {
+    @apply bg-transparent rounded-none absolute;
+}
+
+.select2-container--default .select2-results>.select2-results__options::-webkit-scrollbar-thumb {
+    @apply bg-transparent transition-all duration-200 ease-in-out rounded-full;
+
+}
+
+
+.dark .select2-container--default .select2-results>.select2-results__options:hover::-webkit-scrollbar-thumb {
+    @apply bg-white/20;
+}
+
+
+/* Virtual Machine */
+.vm-h-scroll{ 
+    @screen md{
+    max-height: calc(100vh - 300px);
+}
+} 
+
+
+
+
+/*Range Slider Thumb*/ 
+/* Range Handle */
+.range-slider__range {
+
+
+  &:active::-webkit-slider-thumb {
+    @apply bg-color-1;
+  }
+
+
+  &:active::-moz-range-thumb {
+    @apply bg-color-1;
+  }
+  
+  /* Focus state */
+  &:focus {
+    
+    &::-webkit-slider-thumb {
+     @apply shadow-1;
+    }
+  } 
+ }
+ 
+
+
+
+
+
+
