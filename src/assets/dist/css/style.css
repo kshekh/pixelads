@@ -1307,6 +1307,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
+.bg-neutral-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(159 163 198 / var(--tw-bg-opacity));
+}
 .bg-color-3 {
   --tw-bg-opacity: 1;
   background-color: rgb(247 249 255 / var(--tw-bg-opacity));
@@ -1643,21 +1647,13 @@ select {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-Neutral-600 {
-  --tw-text-opacity: 1;
-  color: rgb(84 86 105 / var(--tw-text-opacity));
-}
-.text-Neutral-500 {
-  --tw-text-opacity: 1;
-  color: rgb(159 163 198 / var(--tw-text-opacity));
-}
 .text-primary-500 {
   --tw-text-opacity: 1;
   color: rgb(66 80 232 / var(--tw-text-opacity));
 }
 .text-neutral-600 {
   --tw-text-opacity: 1;
-  color: rgb(82 82 82 / var(--tw-text-opacity));
+  color: rgb(84 86 105 / var(--tw-text-opacity));
 }
 .text-color-2\/60 {
   color: rgb(42 45 70 / 0.6);
@@ -2104,10 +2100,6 @@ body.openSideBar .sidebar {
 }
 .dark .dark\:bg-white\/30 {
   background-color: rgb(255 255 255 / 0.3);
-}
-.dark .dark\:bg-success-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 127 19 / var(--tw-bg-opacity));
 }
 .dark .dark\:bg-none {
   background-image: none;

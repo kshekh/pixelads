@@ -38,7 +38,7 @@ module.exports = {
           '900': '#0C690B',
         }, 
         
-        Error:{
+        error:{
           '100': '#FEEAD4',
           '200': '#FECFA9',
           '300': '#FEAE7F',
@@ -48,7 +48,7 @@ module.exports = {
           '800': '#920F0D',
           '900': '#78080E',
         },
-         Warning:{
+         warning:{
           '100': '#FEFAD6',
           '200': '#FEF3AE',
           '300': '#FEEA85',
@@ -58,7 +58,7 @@ module.exports = {
           '800': '#927010',
           '900': '#78590A',
         },
-        Neutral:{
+        neutral:{
           '50': '#F9F9FB',
           '100': '#ECEDF4',
           '200': '#DFE0EC',
