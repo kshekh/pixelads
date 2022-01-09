@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/dist/img/favicon.svg">
+    <title>Scalefeat</title>
+
+    <!-- Poppins Fonts -->
+    <link href="../node_modules/typeface-poppins/index.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../node_modules/tippy.js/dist/tippy.css" />
+    <link rel="stylesheet" href="../node_modules/tippy.js/themes/light.css" />
+    <link rel="stylesheet" href="../node_modules/tippy.js/animations/scale.css" />
+    <link rel="stylesheet" href="../node_modules/tippy.js/scale-subtle.css" />
+    <link rel="stylesheet" href="../node_modules/tippy.js/scale-extreme.css" />
+
+    <!-- Tailwind CSS -->
+    <link href="assets/dist/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-white dark:bg-dark">
+    <!-- whole page wrapper -->
+    <div class="overflow-hidden">
+        <header class="absolute top-0 inset-x-0 py-10 px-5 2xl:px-14">
+            <div class="flex items-center justify-between">
+                <a href="index.html">
+                    <span class="sr-only">Scalefeat</span>
+                    <img class="h-8 w-auto sm:h-10 dark:hidden" src="assets/dist/img/Logo-scalefeat.svg" alt="">
+                    <img class="h-8 w-auto sm:h-10 hidden dark:block" src="assets/dist/img/Logo-scalefeat-white.svg"
+                        alt="">
+                </a>
+            </div>
+        </header>
+        <main class="grid md:grid-cols-12 gap-2 min-h-screen ">
+            <section
+                class="bg-gradient-radial dark:bg-dark-1 dark:bg-none col-span-5 md:flex items-center justify-center hidden">
+                <h1 class="sr-only">Scalefeat Registration</h1>               
+                <div class="flex justify-center items-center px-10">
+                    <img class="dark:hidden w-96" src="assets/dist/img/infographic-register.svg" alt="">
+                    <img class="hidden dark:block w-96" src="assets/dist/img/infographic-register-dark.svg" alt="">
+                </div>
+            </section>
+            <section class="col-span-7 flex flex-col justify-center items-start">
+
+                <div class="flex-1 flex items-start justify-center py-12 px-4 sm:px-6 lg:px-8 w-full">
+                    <div class="max-w-sm lg:max-w-md sl:max-w-lg w-full space-y-8">
+                        <div>
+
+                            <h2 class="mt-6 text-center text-xl xs:text-2xl lg:text-2.5xl text-dark dark:text-white font-medium">
+                                Welcome to Scalefeat
+                            </h2>
+                            <p class="mt-2 text-center text-dark/70 dark:text-white/70">
+                                Please create a Scalefeate account.
+
+                            </p>
+                        </div>
+                        <div class="max-w-full" x-data="{ tab: 'personal' }">
+                            <div class="flex xs:w-60 mx-auto ">
+                                <button
+                                    :class="{ 'active border-color/100 text-color/100 dark:border-color/100 dark:text-color/100 font-medium': tab === 'personal' }"
+                                    class="text-dark/40 dark:text-white/40 border-b-2 border-dark/10 dark:border-white/10 py-2 pr-4 w-1/2 text-left "
+                                    @click="tab = 'personal'">
+                                    Personal
+                                </button>
+                                <button
+                                    :class="{ 'active border-color/100 text-color/100 dark:border-color/100 dark:text-color/100 font-medium': tab === 'corporate' }"
+                                    class="text-dark/40 dark:text-white/40 border-b-2 border-dark/10 dark:border-white/10 py-2 pr-4 w-1/2 text-left "
+                                    @click="tab = 'corporate'">
+                                    Corporate
+                                </button>
+                            </div>
+                            <div class="bg-white dark:bg-dark -mt-px">
+                                <div x-show="tab === 'personal'">
+                                    <form class="space-y-6" action="#" method="POST">
+                                        <input type="hidden" name="remember" value="true">
+                                        <div class="flex flex-col gap-5">
+                                            <div class="flex flex-col gap-1">
+                                                <label for="name" class="text-dark/80 dark:text-white/80">Full Name<em
+                                                        class="text-color-2">*</em></label>
+                                                <input id="name" name="name" type="text" autocomplete="name" required
+                                                    class="appearance-none bg-transparent py-3 px-4 block border border-dark/10 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out"
+                                                    placeholder="Name">
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <label for="email" class="text-dark/80 dark:text-white/80">Email<em
+                                                        class="text-color-2">*</em></label>
+                                                <input id="email" name="email" type="email" autocomplete="email"
+                                                    required
+                                                    class="appearance-none bg-transparent py-3 px-4 block border border-dark/10 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out"
+                                                    placeholder="Email">
+
+                                                    <!-- Error/Warning -->
+                                                    <!-- Add the classes on error or invalid input 'invalid:border-color-2 invalid:bg-color-2/5 dark:invalid:border-color-2 dark:invalid:placeholder-color-2 invalid:placeholder-color-2 dark:invalid:bg-color-2/5' -->
+                                                    <!-- Remove 'hidden' and add 'flex' on error at below span -->
+                                                    <span class="text-color-2 text-xs mt-2 hidden">The email field must be a valid email</span>
+                                            </div>
+                                            <div class="flex flex-col gap-1 relative" x-data="{ show: true }">
+                                                <label for="password"
+                                                    class="text-dark/80 dark:text-white/80">Password<em
+                                                        class="text-color-2">*</em></label>
+                                                <div class="relative">
+                                                    <input id="password" name="password" type="password"
+                                                        :type="show ? 'password' : 'text'"
+                                                        autocomplete="current-password" required
+                                                        class="appearance-none bg-transparent py-3 px-4 block border border-dark/10 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out"
+                                                        placeholder="Password">
+                                                    <div class="absolute right-3 top-4 -mt-0.5">
+                                                        <svg @click="show = !show"
+                                                            class="h-6 w-6 text-dark/50 dark:text-white/60" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <!-- Password inVisible -->
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                                                :class="{'hidden': !show, 'block':show }" />
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                                                :class="{'hidden': !show, 'block':show }" />
+                                                            <!-- Password Visible -->
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                                                                :class="{'block': !show, 'hidden':show }" />
+                                                        </svg>
+                                                    </div>
+
+                                                    <!-- Password Strength test -->
+                                                    <div class="grid grid-cols-9 gap-2 justify-between w-full mt-4 relative" x-data="{pw: ''}">
+                                                        <!-- If (password === blank) {
+                                                        // Blank Password  
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        
+                                                            } else if(password === week) {
+                                                      // Week Password  
+
+                                                        <span class="h-1 flex bg-color-2"></span>
+                                                        <span class="h-1 flex bg-color-2"></span>
+                                                        <span class="h-1 flex bg-color-2"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+
+                                                        } else if(password === good) {
+                                                        //Good Password  
+
+                                                        <span class="h-1 flex bg-color-9"></span>
+                                                        <span class="h-1 flex bg-color-9"></span>
+                                                        <span class="h-1 flex bg-color-9"></span> 
+                                                        <span class="h-1 flex bg-color-9"></span>
+                                                        <span class="h-1 flex bg-color-9"></span>
+                                                        <span class="h-1 flex bg-color-9"></span>                                                        
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                        <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+
+                                                        } else {  
+                                                         // Strong Password  -->
+
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                        <span class="h-1 flex bg-color"></span>
+                                                       
+                                                    <!-- } -->
+
+
+                                                    <div class="absolute top-3 right-0 flex gap-2 items-center text-xs text-dark/50 dark:text-white/50">
+                                                        <span class="text-dark/80 dark:text-white/80 hidden">Too short</span>
+                                                        <span class="text-color-2 hidden">Week</span>
+                                                        <span class="text-color-9 hidden">Good</span>
+                                                        <span class="text-color-1">Strong</span>
+
+                                                        <!-- Tooltip -->
+                                                        <div><span id="passordTip" class="bg-color text-white" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-dark/50 dark:text-white/50" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                                                          </svg></span></div>
+                                                    </div>
+                                                        </div>
+
+
+                                                    <div class="flex flex-col gap-1 text-sm pt-12">
+                                                        <p class="text-color-1 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                          </svg> <span>A lowercase letter</span></p>
+                                                        <p class="text-color-1 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                          </svg> <span>A capital ( uppecase) letter</span></p>
+                                                        <p class="text-color-2 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                          </svg> <span>A Number</span></p>
+                                                        <p class="text-color-1 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                          </svg> <span>Minimum 8 charaters</span></p>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-4 xs:gap-1">
+                                            <div class="flex items-center text-sm ">
+                                                <input id="agree" name="agree" type="checkbox"
+                                                    class="h-6 w-6 bg-transparent text-color focus:ring-color0 border-dark/20 dark:border-white/20 rounded-sm focus:ring-color dark:focus:ring-offset-dark">
+                                                <label for="agree"
+                                                    class="ml-2 block text-dark/80 dark:text-white/60 pr-1">
+                                                    I agree to
+                                                </label>
+                                                <a href="javascript:void(0)"
+                                                    class="block sm:inline font-medium text-color hover:text-color-1 transition-all duration-500 ease-in-out">
+                                                    privacy policy & terms</a>.
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="xs:pt-4">
+                                            <button type="submit"
+                                                class="group relative w-full flex justify-center py-3 px-6 border border-transparent font-medium rounded text-white bg-color hover:bg-color-1 transition-all duration-500 ease-in-out focus:outline-none  ">
+                                                Create and Account
+                                            </button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div x-show="tab === 'corporate'">
+
+                                    <form class="space-y-6" action="#" method="POST">
+                                        <input type="hidden" name="remember" value="true">
+                                        <div class="flex flex-col gap-5">
+                                            <div class="flex flex-col gap-1">
+                                                <label for="corpo-name" class="text-dark/80 dark:text-white/60">Full Name<em
+                                                        class="text-color-2">*</em></label>
+                                                <input id="corpo-name" name="corpo-name" type="text" autocomplete="name" required
+                                                    class="appearance-none bg-transparent py-3 px-4 block border border-dark/10 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out"
+                                                    placeholder="Name">
+                                            </div>
+                                            <div class="flex flex-col gap-1">
+                                                <label for="corpo-email" class="text-dark/80 dark:text-white/80">Email<em
+                                                        class="text-color-2">*</em></label>
+                                                <input id="corpo-email" name="corpo-email" type="email" autocomplete="email"
+                                                    required
+                                                    class="appearance-none bg-transparent py-3 px-4 block border border-dark/10 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out"
+                                                    placeholder="Email">
+                                            </div>
+                                            <div class="flex flex-col gap-1 relative" x-data="{ show: true }">
+                                                <label for="corpo-password"
+                                                    class="text-dark/80 dark:text-white/80">Password<em
+                                                        class="text-color-2">*</em></label>
+                                                <div class="relative">
+                                                    <input id="corpo-password" name="password" type="password"
+                                                        :type="show ? 'password' : 'text'"
+                                                        autocomplete="current-password" required
+                                                        class="appearance-none bg-transparent py-3 px-4 block border border-dark/10 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out"
+                                                        placeholder="Password">
+                                                    <div class="absolute right-3 top-4 -mt-0.5">
+                                                        <svg @click="show = !show"
+                                                            class="h-6 w-6 text-dark/50 dark:text-white/60" fill="none"
+                                                            viewBox="0 0 24 24" stroke="currentColor">
+                                                            <!-- Password inVisible -->
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                                                                :class="{'hidden': !show, 'block':show }" />
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                                                                :class="{'hidden': !show, 'block':show }" />
+                                                            <!-- Password Visible -->
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                stroke-width="2"
+                                                                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+                                                                :class="{'block': !show, 'hidden':show }" />
+                                                        </svg>
+                                                    </div>
+
+                                                    
+                                                   <!-- Password Strength test -->
+                                                   <div class="grid grid-cols-9 gap-2 justify-between w-full mt-4 relative" x-data="{pw: ''}">
+                                                    <!-- If (password === blank) {
+                                                    // Blank Password  
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    
+                                                        } else if(password === week) {
+                                                  // Week Password  
+
+                                                    <span class="h-1 flex bg-color-2"></span>
+                                                    <span class="h-1 flex bg-color-2"></span>
+                                                    <span class="h-1 flex bg-color-2"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+
+                                                    } else if(password === good) {
+                                                    //Good Password  
+-->
+                                                    <span class="h-1 flex bg-color-9"></span>
+                                                    <span class="h-1 flex bg-color-9"></span>
+                                                    <span class="h-1 flex bg-color-9"></span> 
+                                                    <span class="h-1 flex bg-color-9"></span>
+                                                    <span class="h-1 flex bg-color-9"></span>
+                                                    <span class="h-1 flex bg-color-9"></span>                                                        
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+                                                    <span class="h-1 flex bg-dark/10 dark:bg-white/10"></span>
+<!-- 
+                                                    } else {  
+                                                     // Strong Password   
+
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                    <span class="h-1 flex bg-color"></span>
+                                                   
+                                                } -->
+
+
+                                                <div class="absolute top-3 right-0 flex gap-2 items-center text-xs text-dark/50 dark:text-white/50">
+                                                    <span class="text-dark/80 dark:text-white/80 hidden">Too short</span>
+                                                    <span class="text-color-2 hidden">Week</span>
+                                                    <span class="text-color-9 ">Good</span>
+                                                    <span class="text-color-1 hidden">Strong</span>
+
+                                                    <!-- Tooltip -->
+                                                    <div><span id="passordTip" class="bg-color text-white" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-dark/50 dark:text-white/50" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                                                      </svg></span></div>
+                                                </div>
+                                                    </div>
+
+
+                                                <div class="flex flex-col gap-1 text-sm pt-12">
+                                                    <p class="text-color-1 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                      </svg> <span>A lowercase letter</span></p>
+                                                      <p class="text-color-2 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                                      </svg> <span>A capital ( uppecase) letter</span></p>
+                                                    <p class="text-color-1 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                      </svg> <span>A Number</span></p>                                                    
+                                                    <p class="text-color-1 flex gap-1 items-center" ><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                                      </svg> <span>Minimum 8 charaters</span></p>
+                                                </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div
+                                            class="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-4 xs:gap-1">
+                                            <div class="flex items-center text-sm ">
+                                                <input id="corpo-agree" name="corpo-agree" type="checkbox"
+                                                    class="h-6 w-6 bg-transparent text-color focus:ring-color0 border-dark/20 dark:border-white/20 rounded-sm focus:ring-color dark:focus:ring-offset-dark">
+                                                <label for="corpo-agree"
+                                                    class="ml-2 block text-dark/80 dark:text-white/60 pr-1">
+                                                    I agree to
+                                                </label>
+                                                <a href="javascript:void(0)"
+                                                    class="block sm:inline font-medium text-color hover:text-color-1 transition-all duration-500 ease-in-out">
+                                                    privacy policy & terms</a>.
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="xs:pt-4">
+                                            <button type="submit"
+                                                class="group relative w-full flex justify-center py-3 px-6 border border-transparent font-medium rounded text-white bg-color hover:bg-color-1 transition-all duration-500 ease-in-out focus:outline-none  ">
+                                                Create and Account
+                                            </button>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-sm text-dark/80 dark:text-white/60 text-center">
+                            Already have an account?
+
+                            <!-- space -->
+                            <a href="login.html"
+                                class="block sm:inline font-medium text-color hover:text-color-1 transition-all duration-500 ease-in-out">Log
+                                In</a>.
+                        </p>
+
+                    </div>
+                </div>
+  <!-- Site Footer -->
+  <footer class="w-full">
+    <div class="py-5 lg:py-10">
+        <p class="text-sm text-dark/40 dark:text-white/40 text-center">
+            Copyright &copy; 2021 Scalefeat
+        </p>
+    </div>
+    </footer>
+
+
+            </section>
+        </main>
+
+    </div>
+   
+
+   
+  
+  <!-- Theme mode change button -->
+  <button type="button" title="Change theme mode" class="mode transition-all ease-in-out duration-150 fixed top-20  -right-1 inline-flex items-center justify-center pl-2 pr-1 py-3 border border-transparent text-base font-medium rounded-l-full text-white 
+  bg-dark/90 hover:bg-dark dark:bg-white/90 dark:hover:bg-white dark:text-dark">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" viewBox="0 0 20 20"
+      fill="currentColor">
+      <path fill-rule="evenodd"
+          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+          clip-rule="evenodd" />
+  </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 20 20" fill="currentColor">
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+  </svg>
+</button>
+
+    <script src="../node_modules/alpinejs/dist/alpine.js"></script>
+    <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/tippy.js/dist/tippy-bundle.umd.min.js"></script>
+    <script src="../node_modules/@ryangjchandler/alpine-tooltip/dist/cdn.min.js"></script>
+
+    <script>
+
+ // With the above scripts loaded, you can call `tippy()` with a CSS
+      // selector and a `content` prop:
+      tippy('#passordTip', {
+        content: 'Think about a stronger password!',
+        placement: 'left',
+        animation: 'scale',
+      });
+        // Theme mode updater
+        var el = document.querySelector('.mode');
+
+        el.onclick = function () {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+
+</body>
+
+</html>
