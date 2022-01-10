@@ -11,10 +11,13 @@ module.exports = {
       },
       colors: {
         color:{
-          '1':'#F7F9FF',
-          '2':'#2A2D46',
-          '3':'#F7F9FF',
-          '4':'#E1E3EA',
+          DEFAULT:'#F7F9FF',
+          '1':'#2A2D46',
+          '2':'#F7F9FF',
+          '3':'#E1E3EA',
+          '4':'#176BEF', // Google Button
+          '5':'#7289DA', // Discord Button
+          '6':'#00ACEE', // Twitter Button
         },
         primary:{
           '100': '#DADEFE',
@@ -66,7 +69,7 @@ module.exports = {
           '400': '#ACAFCD',
           '500': '#9FA3C6',
           '600': '#545669',
-          '700': '#78590A',
+          '700': '#2A2D46',
           '800': '#22253A',
           '900': '#1B1D2D',
         },

@@ -7,9 +7,9 @@
   <!-- Viewport -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" href="assets/dist/img/favicon.svg">
-  <title>Scalefeat</title>
+  <title>Pixelads</title>
 
-  <!-- Poppins Fonts -->
+  <!-- Inter Fonts -->
   <link href="../node_modules/@fontsource/inter/variable.css" rel="stylesheet">
 
   <!-- Tailwind CSS -->
@@ -17,13 +17,13 @@
 
 </head>
 
-<body class="bg-color-3 dark:bg-primary">
+<body class="bg-color dark:bg-color-1">
   <!-- whole page wrapper -->
   <div class="overflow-hidden">
     <header class="absolute top-0 inset-x-0 py-5 px-5 2xl:px-14">
       <div class="flex items-center justify-between">
         <a href="index.html">
-          <span class="sr-only">Scalefeat</span>
+          <span class="sr-only">Pixelads</span>
           <img class="h-8 w-auto sm:h-10 dark:hidden" src="assets/dist/img/logo-lg.svg" alt="">
           <img class="h-8 w-auto sm:h-10 hidden dark:block" src="assets/dist/img/logo-dark.svg" alt="">
         </a>
@@ -31,15 +31,15 @@
     </header>
     <main class="grid md:grid-cols-12 gap-2 min-h-screen ">
       <!-- right panel -->
-      <section class="bg-primary-100 dark:bg-dark-1 dark:bg-none col-span-5 md:flex items-center justify-center hidden">
-        <h1 class="sr-only">Scalefeat Login</h1>
+      <section class="bg-primary-100 dark:bg-neutral-800 dark:bg-none col-span-5 md:flex items-center justify-center hidden">
+        <h1 class="sr-only">Pixelads Login</h1>
         
         
         <div class="flex justify-center items-center px-10 flex-col mt-16">
-          <div><h2 class="text-3.5xl font-bold mt-12">Discover the world’s <br>top Freelancers & <br>Creatives.</h2></div>
+          <div><h2 class="text-3.5xl font-bold mt-12 text-neutral-900 dark:text-white">Discover the world’s <br>top Freelancers & <br>Creatives.</h2></div>
         <div class="my-12">  <img class="dark:hidden" src="assets/dist/img/team-work.svg" alt="">
-          <img class="hidden dark:block w-96" src="assets/dist/img/team-work-dark.svg" alt=""></div>
-          <div class=""> <h4 class="text-Neutral-600">Copyright © 2021 Pixelads.fr</h4></div>
+          <img class="hidden dark:block " src="assets/dist/img/team-work-dark.svg" alt=""></div>
+          <div class=""> <h4 class="text-neutral-600 dark:text-neutral-500">Copyright © 2021 Pixelads.fr</h4></div>
         </div>
       </section>
 
@@ -50,41 +50,43 @@
           <div class="max-w-sm lg:max-w-md sl:max-w-lg w-full space-y-8">
             <div>
 
-              <h2 class="mt-6 text-center text-xl xs:text-2xl font-bold lg:text-2.5xl text-dark dark:text-white ">
+              <h2 class="mt-6 text-center text-xl xs:text-2xl font-bold lg:text-2.5xl text-neutral-900 dark:text-white ">
                 Log in to Pixelads
               </h2>
              
             </div>
             <form class="mt-10 space-y-6" action="#" method="POST">
               <input type="hidden" name="remember" value="true">
-              <div class="flex flex-col gap-1">
-                
-                <input id="email" name="email" type="email" autocomplete="email" required="" class="appearance-none bg-transparent py-3 px-4 block border border-color-4 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out" placeholder="Username">
+              <div class="flex flex-col gap-5">
+              <div class="flex flex-col gap-1 relative">
+                <label class="sr-only" for="username">Username</label>
+                <input id="username" name="username" type="text" autocomplete="username" required="" class="appearance-none bg-transparent py-3 px-4 block border border-neutral-900/10 dark:border-neutral-500/20 text-neutral-900/50 dark:text-white/30 w-full focus:bg-primary-100/20 dark:focus:bg-primary-900/5 focus:border-primary-500 dark:focus:border-primary-500 dark:focus:placeholder-primary-500 focus:placeholder-primary-500 focus:text-primary-500 dark:focus:text-primary-500 rounded transition-all duration-500 ease-in-out focus:ring-0 outline-none" placeholder="Username">
 
-         <!-- Add the classes on error or invalid input 'invalid:border-color-2 invalid:bg-color-2/5 dark:invalid:border-color-2 dark:invalid:placeholder-color-2 invalid:placeholder-color-2 dark:invalid:bg-color-2/5' -->
+         <!-- Add the classes on error or invalid input 'invalid:border-error-500 invalid:bg-error-100 dark:invalid:border-error-500 dark:invalid:placeholder-error-500 invalid:placeholder-error-500 dark:invalid:bg-error-100' -->
 
 
               </div>
-              <div class="flex flex-col gap-5">
-                <div class="flex flex-col gap-1">
-                
+            
+                <div class="flex flex-col gap-1 relative">
+                  <label class="sr-only" for="email">Email</label>
                   <input id="email" name="email" type="email" autocomplete="email" required
-                    class="appearance-none bg-transparent py-3 px-4 block border border-color-4 dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out  "
+                    class="appearance-none bg-transparent py-3 px-4 block border border-neutral-900/10 dark:border-neutral-500/20 text-neutral-900/50 dark:text-white/30 w-full focus:bg-primary-100/20 dark:focus:bg-primary-900/5 focus:border-primary-500 dark:focus:border-primary-500 dark:focus:placeholder-primary-500 focus:placeholder-primary-500 focus:text-primary-500 dark:focus:text-primary-500 rounded transition-all duration-500 ease-in-out focus:ring-0 outline-none"
                     placeholder="Email">
 
-           <!-- Add the classes on error or invalid input 'invalid:border-color-2 invalid:bg-color-2/5 dark:invalid:border-color-2 dark:invalid:placeholder-color-2 invalid:placeholder-color-2 dark:invalid:bg-color-2/5' -->
+           <!-- Add the classes on error or invalid input 'invalid:border-error-500 invalid:bg-error-100 dark:invalid:border-error-500 dark:invalid:placeholder-error-500 invalid:placeholder-error-500 dark:invalid:bg-error-100' -->
 
 
                 </div>
                 <div class="flex flex-col gap-1 relative" x-data="{ show: true }">
-            
+                 
+                  <label class="sr-only" for="password">Password</label>
                   <div class="relative">
                     <input id="password" name="password" type="password" :type="show ? 'password' : 'text'"
                       autocomplete="current-password" required
-                      class="appearance-none bg-transparent py-3 px-4 block border border-color-4  dark:border-white/10 w-full focus:bg-color/5 focus:placeholder-color focus:text-color focus:ring-color focus:border-color text-dark/80 dark:text-white/50 dark:focus:text-color dark:focus:placeholder-color focus:ring-1 outline-none rounded transition-all duration-500 ease-in-out"
+                      class="appearance-none bg-transparent py-3 px-4 block border border-neutral-900/10 dark:border-neutral-500/20 text-neutral-900/50 dark:text-white/30 w-full focus:bg-primary-100/20 dark:focus:bg-primary-900/5 focus:border-primary-500 dark:focus:border-primary-500 dark:focus:placeholder-primary-500 focus:placeholder-primary-500 focus:text-primary-500 dark:focus:text-primary-500 rounded transition-all duration-500 ease-in-out focus:ring-0 outline-none"
                       placeholder="Password">
                     <div class="absolute right-3 top-4 -mt-0.5">
-                      <svg @click="show = !show" class="h-6 w-6 text-Neutral-500 dark:text-white/60" fill="none"
+                      <svg @click="show = !show" class="h-6 w-6 text-neutral-900/50 dark:text-white/30" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <!-- Password inVisible -->
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -105,14 +107,14 @@
               <div class="flex flex-col xs:flex-row xs:items-center xs:justify-between gap-4 xs:gap-1">
                 <div class="flex items-center text-sm sm:text-base">
                   <input id="remember-me" name="remember-me" type="checkbox"
-                    class="h-6 w-6 bg-transparent text-color focus:ring-color0 border-dark/20 dark:border-white/20 rounded-sm focus:ring-color dark:focus:ring-offset-dark">
-                  <label for="remember-me" class="ml-2 block text-dark/80 dark:text-white/60">
+                    class="h-6 w-6 bg-transparent text-primary-500 dark:text-primary-500 focus:ring-primary-500 border-neutral-900/20 dark:border-white/20 rounded-sm dark:focus:ring-offset-neutral-900">
+                  <label for="remember-me" class="ml-2 block text-neutral-600 dark:text-neutral-500">
                     Remember me
                   </label>
                 </div>
 
                 <div class="text-sm sm:text-base">
-                  <a href="forgot-password.html" class="font-medium text-primary-500 ">
+                  <a href="forgot-password.html" class="text-primary-500 ">
                     Forgot  password?
                   </a>
                 </div>
@@ -120,15 +122,15 @@
 
               <div class="xs:pt-4">
                 <button type="submit"
-                  class="group relative w-full flex justify-center py-3 px-6 border border-transparent font-medium rounded text-white bg-primary-500  transition-all duration-500 ease-in-out focus:outline-none  ">
+                  class="group relative w-full flex justify-center py-3 px-6 border border-transparent font-medium rounded text-white bg-primary-500  transition-all duration-500 ease-in-out focus:outline-none outline-none  ">
                   Log In
                 </button>
               </div>
-              <p class="text-sm sm:text-base text-neutral-600 dark:text-white/60 text-center">
+              <p class="text-sm sm:text-base text-neutral-600 dark:text-neutral-500 text-center">
                 Don't have an account yet?               
                  
                 <!-- space -->
-                <a href="register.html" class="block sm:inline font-medium text-primary-500  transition-all duration-500 ease-in-out">Craete an account</a>.
+                <a href="register.html" class="block sm:inline font-medium text-primary-500  transition-all duration-500 ease-in-out">Craete an account</a>
               </p>
             </form>
           </div>
@@ -141,23 +143,16 @@
     </main>
 
   </div>
-
+ 
 
 
   <!-- Theme mode change button -->
-  <button type="button" title="Change theme mode" class="mode transition-all ease-in-out duration-150 fixed top-20  -right-1 inline-flex items-center justify-center pl-2 pr-1 py-3 border border-transparent text-base font-medium rounded-l-full text-white 
-  bg-dark/90 hover:bg-dark dark:bg-white/90 dark:hover:bg-white dark:text-dark">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" viewBox="0 0 20 20"
-      fill="currentColor">
-      <path fill-rule="evenodd"
-          d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-          clip-rule="evenodd" />
-  </svg>
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 dark:hidden" viewBox="0 0 20 20" fill="currentColor">
-      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-  </svg>
+  <button type="button" title="Change theme mode" class="mode transition-all ease-in-out duration-300 fixed bottom-2 right-2 flex justify-between gap-0 text-white bg-neutral-500 dark:bg-neutral-600 rounded-full w-36 text-sm uppercase">
+  <span class="relative z-10 w-1/2 py-2">Light</span> <span class="relative z-10 w-1/2 py-2">Dark</span>
+   
+  <span  class="checked-label inset-y-0 w-1/2 absolute transform left-0 bg-primary-500 rounded-full transition-all ease-in-out duration-300"></span>
 </button>
-
+  
 
   <script src="../node_modules/alpinejs/dist/alpine.js"></script>
 
@@ -169,7 +164,10 @@
 
     el.onclick = function () {
       document.documentElement.classList.toggle('dark');
+      document.querySelector(".checked-label").classList.toggle("translate-x-full");
+    
     }
+
   </script>
 
 </body>

@@ -83,6 +83,15 @@
 }
 
 
+/*
+.checked-label{
+    &.checked{
+        @apply translate-x-full 
+    }
+}
+
+*/
+
 
 .menuOpen{
     @screen md{
