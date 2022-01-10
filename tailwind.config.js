@@ -18,6 +18,9 @@ module.exports = {
           '4':'#176BEF', // Google Button
           '5':'#7289DA', // Discord Button
           '6':'#00ACEE', // Twitter Button
+          '7':'#34C4FF', //error
+          '8':'#1B1D2D', //header dark
+          '9':'#E5E5E5'
         },
         primary:{
           '100': '#DADEFE',

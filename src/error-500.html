@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Viewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="assets/dist/img/favicon.svg">
+  <title>Pixelads</title>
+
+  <!-- Inter Fonts -->
+  <link href="../node_modules/@fontsource/inter/variable.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
+
+  <!-- Tailwind CSS -->
+  <link href="assets/dist/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-color dark:bg-color-1">
+
+
+
+
+    
+   <!-- header -->
+    <div class="relative dark:bg-color-8 bg-color ">
+      <div class=" max-w-screen-sl mx-auto sm:px-6 md:py-5 px-5 2xl:px-14 ">
+        <div class="flex justify-between items-center  py-4 md:py-0 md:justify-start md:space-x-10">
+          <div class="flex justify-start lg:w-0 lg:flex-1">
+            <a href="#">
+              <span class="sr-only">Workflow</span>
+              <img class="h-8 w-auto sm:h-10 dark:hidden" src="assets/dist/img/logo-lg.svg" alt="">
+              <img class="h-8 w-auto sm:h-10 hidden dark:block" src="assets/dist/img/logo-dark.svg" alt="">
+
+            </a>
+          </div>
+          
+        <div class="">
+            <a href="#" class="dark:text-color-9 mx-4">Find Projects</a>
+            
+            <a href="#" class="mx-4 dark:text-color-9">Find Freelancers</a></div>
+          <div class="relative">
+
+
+              <a href="#"> <img class="h-9 md:h-12 w-9 md:w-12 rounded-full" src="assets/dist/img/profile.png" alt=""></a>
+
+            
+        </div>
+        </div>
+      </div>
+    
+     
+    </div>
+   
+    
+    
+  
+
+
+
+
+
+
+
+
+  <!-- whole page wrapper -->
+  <div class="overflow-hidden">
+    <!-- <header class="absolute top-0 inset-x-0 py-5 px-5 2xl:px-14">
+      <div class="flex items-center justify-between">
+        <a href="index.html">
+          <span class="sr-only">Pixelads</span>
+          <img class="h-8 w-auto sm:h-10 dark:hidden" src="assets/dist/img/logo-lg.svg" alt="">
+          <img class="h-8 w-auto sm:h-10 hidden dark:block" src="assets/dist/img/logo-dark.svg" alt="">
+        </a>
+      </div>
+    </header> -->
+    <main class="grid  md:grid-cols-12 gap-2 min-h-screen sm:grid-col-12  max-w-screen-sl mx-auto">
+   
+
+
+      <!-- left panel -->
+      <section class="sm:col-span-5  flex-col flex justify-center sm:justify-items-start md:py-5 px-5 2xl:px-14 col-span-12 py-22 z-50">
+         
+        <div class=" items-center ">
+            <h4 class="md:text-7.5xl font-bold text-color-7 text-5xl pb-5 ">500</h4>
+            <h5 class="font-medium md:text-3xl md:py-3  pt-1 text-2xl dark:text-white">Internet Server Error</h5>
+            <p class="text-base font-normal md:py-3 pb-4 dark:text-color-9">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            
+               <div class="pt-5"><button class="bg-primary-500  py-4 px-8 rounded-md text-white" type="submit">Back to Home</button></div>
+        </div>
+
+        
+
+
+      </section>
+     <section class="sm:col-span-7 flex flex-col col-span-12 ">
+        <div class="flex-1 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 w-full col-span-9 ">
+            <img class="dark:hidden  md:max-w-6xl " src="assets/dist/img/error-500.svg" alt="">
+            <img class=" hidden dark:block  md:max-w-6xl " src="assets/dist/img/error-500-dark.svg" alt="">
+           </div>
+     </section>
+    </main>
+
+  </div>
+ 
+
+
+  <!-- Theme mode change button -->
+  <button type="button" title="Change theme mode" class="mode transition-all ease-in-out duration-30 fixed bottom-2 right-2 flex justify-between gap-0 text-white bg-neutral-500 dark:bg-neutral-600 rounded-full w-36 text-sm uppercase">
+  <span class="relative z-10 w-1/2 py-2">Light</span> <span class="relative z-10 w-1/2 py-2">Dark</span>
+   
+  <span  class="checked-label inset-y-0 w-1/2 absolute transform left-0 bg-primary-500 rounded-full transition-all ease-in-out duration-300"></span>
+</button>
+  
+
+  <script src="../node_modules/alpinejs/dist/alpine.js"></script>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput-jquery.min.js"></script>
+  <script type="text/javascript">
+      $(function () {
+          var code = "+34"; // Assigning value from model.
+          $('#txtPhone').val(code);
+          $('#txtPhone').intlTelInput({
+              autoHideDialCode: true,
+              autoPlaceholder: "ON",
+              dropdownContainer: document.body,
+              formatOnDisplay: true,
+              hiddenInput: "full_number",
+              initialCountry: "auto",
+              nationalMode: true,
+              placeholderNumberType: "MOBILE",
+              preferredCountries: ['France'],
+              separateDialCode: true
+          });
+          $('#btnSubmit').on('click', function () {
+              var code = $("#txtPhone").intlTelInput("getSelectedCountryData").dialCode;
+              var phoneNumber = $('#txtPhone').val();
+              var name = $("#txtPhone").intlTelInput("getSelectedCountryData").name;
+              alert('Country Code : ' + code + '\nPhone Number : ' + phoneNumber + '\nCountry Name : ' + name);
+          });
+      });
+  </script>
+  
+
+  <script>
+
+
+    // Theme mode updater
+    var el = document.querySelector('.mode');
+
+    el.onclick = function () {
+      document.documentElement.classList.toggle('dark');
+      document.querySelector(".checked-label").classList.toggle("translate-x-full");
+    
+    }
+
+
+    // Photo Uplpoad
+    function photoUpload() {
+  return {
+    previewUrl: "",
+    updatePreview() {
+      var reader,
+        files = document.getElementById("thumbnail").files;
+
+      reader = new FileReader();
+
+      reader.onload = e => {
+        this.previewUrl = e.target.result;
+      };
+
+      reader.readAsDataURL(files[0]);
+    },
+    clearPreview() {
+      document.getElementById("thumbnail").value = null;
+      this.previewUrl = "";
+    }
+  };
+}
+
+
+  </script>
+
+</body>
+
+</html>
