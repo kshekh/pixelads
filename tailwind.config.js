@@ -171,6 +171,7 @@ module.exports = {
 
     borderRadius: {
       'ml': '0.3125rem', // for 5px rounded
+      'sl': '0.625rem', // for 10px rounded
       '4xl': '2.5rem' // for 40px rounded
   },
 
@@ -220,8 +221,8 @@ module.exports = {
       '3xl': '1922px',
       // => @media (min-width: 1922px) { ... }    
 
-      'wrap': '1164px',
-      // => @media (min-width: 1920px) { ... }    
+      'wrap': '1210px',
+      // => @media (min-width: 1210px) { ... }    
 
   },
   },
