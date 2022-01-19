@@ -19,11 +19,12 @@ module.exports = {
           '5':'#7289DA', // Discord Button
           '6':'#00ACEE', // Twitter Button
           '7':'#34C4FF', //error
-          '8':'#1B1D2D', //header dark
+          '8':'#820182', // Discord
           '9':'#E5E5E5',
           '10':'#F8F8F8',
           '11':'#DCEFFD',
           '12':'#A942E8',
+          '13':'#00ACEE',
 
         },
         primary:{
