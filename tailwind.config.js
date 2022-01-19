@@ -20,7 +20,11 @@ module.exports = {
           '6':'#00ACEE', // Twitter Button
           '7':'#34C4FF', //error
           '8':'#1B1D2D', //header dark
-          '9':'#E5E5E5'
+          '9':'#E5E5E5',
+          '10':'#F8F8F8',
+          '11':'#DCEFFD',
+          '12':'#A942E8',
+
         },
         primary:{
           '100': '#DADEFE',
@@ -88,6 +92,12 @@ module.exports = {
         '2':'0px 0px 20px rgba(98, 105, 104, 0.1)',
         '3':'0px 0px 20px rgba(98, 105, 104, 0.2)',
        '4': '#1EA0EB 0px 0px 0px 2px',
+       '5': '0px 8px 15px rgba(223, 223, 223, 0.15)',
+       '6': '0px 8px 15px rgba(20, 23, 45, 0.08)',
+       '7': '0px 0px 16px rgba(198, 199, 201, 0.1)',
+       '8': '0px 0px 16px rgba(42, 45, 70, 0.1)',
+       
+       
 
       },
 
@@ -105,9 +115,10 @@ module.exports = {
       },
 
       backgroundImage:{
-         'gradient-radial': 'radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #EAF7F4 100%)',
-         'gradient-1': 'linear-gradient(90deg, #1DD1B1 36.96%, #1D8FD1 87.96%)',
-         'bg-pettern': 'url(../img/bg-pettern.svg)',
+         'stats': 'url(../img/stats.svg)',
+         'pettern-light': 'url(../img/pettern-light.svg)',
+         'pettern-dark': 'url(../img/pettern-dark.svg)',
+         
       },
 
       spacing: {
@@ -159,7 +170,14 @@ module.exports = {
 
   minHeight: (theme) => ({
       ...theme('spacing'),
+      inherit:'inherit'
     }),
+    maxHeight:{
+      inherit:'inherit'
+    },
+    maxWidth:{
+      inherit:'inherit'
+    },
 
     borderWidth: {
         '3': '3px',
@@ -175,6 +193,10 @@ module.exports = {
       '4xl': '2.5rem' // for 40px rounded
   },
 
+  zIndex:{
+    '999':'999',
+    '9999':'9999',
+  },
 
     fontSize: {
         mi: '.75rem',
@@ -228,5 +250,6 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

@@ -66,13 +66,17 @@
 }
 
 
+.on-hover-scroll:hover::-webkit-scrollbar-thumb {
+    @apply bg-neutral-900/20;
+}
+
 
 .dark .on-hover-scroll:hover::-webkit-scrollbar-thumb {
     @apply bg-white/20;
 }
 
 
-@layer utilities{
+@layer utilities {
     .scroll-thick::-webkit-scrollbar {
         @apply w-2 h-2;
     }
@@ -82,110 +86,42 @@
     @apply hidden;
 }
 
+.swiper-pagination-bullet-active {
+    @apply ring-2 ring-primary-500 bg-primary-500 ring-offset-4 ring-offset-neutral-800
+}
 
-/*
-.checked-label{
-    &.checked{
-        @apply translate-x-full 
+
+.dark .iti--separate-dial-code {
+    .iti__selected-dial-code {
+        @apply text-white/30
     }
 }
 
-*/
+
+/*Range Slider Thumb*/
+/* Range Handle */
+.range-slider__range {
 
 
-.menuOpen{
-    @screen md{
-        @apply flex !important
+    &:active::-webkit-slider-thumb {
+        @apply bg-color-1;
     }
-}
 
-body {
-    &.openSideBar {
-        .sidebar {
-            @media (max-width:1023px) {
-                @apply translate-x-0;
-            }
+
+    &:active::-moz-range-thumb {
+        @apply bg-color-1;
+    }
+
+    /* Focus state */
+    &:focus {
+
+        &::-webkit-slider-thumb {
+            @apply shadow-1;
         }
     }
 }
 
 
-
-
-
-/*Sidebar collapse*/
-.sidebar {
-
-    &.sidebar-collapse {
-        &:not(:hover) {
-            @apply w-20;
-
-            .logo-sect {
-                @apply px-0
-            }
-
-            .sidebar-logo,
-            .toggle-sidebar,
-            .sidebar-label,
-            .menu-open>.sub-menu,
-            .angle {
-                @apply hidden !important;
-
-            }
-
-            .sidebar-icon {
-                @apply block !important;
-            }
-
-            .logo-wrap,
-            .label-wrap,
-            .sidebar-btn {
-                @apply justify-center gap-0
-            }
-        }
-    }
-}
-
-
-/*Country code CSS optional  */
-.iti--separate-dial-code .iti__flag-container:hover .iti__selected-flag {
-    @apply bg-transparent
-}
-
-.iti--separate-dial-code .iti__selected-flag {
-    @apply border-0 shadow-none bg-transparent
-}
-
-.dark .iti__selected-dial-code {
-    @apply text-white/70
-}
-
-.dark .iti__arrow {
-    border-top-color: rgb(255 255 255 / 70%)
-}
-
-.iti__flag {
-    @apply border-0 shadow-none bg-transparent
-}
-
-
-
-    .apexcharts-canvas{ 
-        @apply w-auto max-w-full !important;
-        svg{
-            @apply w-full max-w-md !important;
-            foreignObject{
-                @apply w-full !important;
-            }
-        }
-    }
-
-
-.dark #chart {
-    .apexcharts-legend-text {
-        @apply text-white/80 !important;
-    }
-}
 
 .select2 {
     @apply opacity-0 absolute top-0 inset-0 w-full flex items-stretch !important;
@@ -194,10 +130,10 @@ body {
         @apply flex-1 flex items-stretch;
 
         .select2-selection {
-            @apply flex-1 flex items-stretch h-auto ;
+            @apply flex-1 flex items-stretch h-auto text-neutral-900/60;
 
             .select2-selection__rendered {
-                @apply leading-none flex-1 flex items-center !important;
+                @apply leading-none flex-1 flex items-center text-neutral-900/60 !important;
 
             }
         }
@@ -214,16 +150,47 @@ body {
         }
     }
 }
-
-
  
 
+ 
+.select2-dropdown{
+    @apply border-transparent shadow-1 rounded-sl p-3 text-neutral-600 
+}
 
-.dark .select2-dropdown {
-    @apply  ring-white/5  !important
+.select2-dropdown .select2-search__field{
+    @apply border border-neutral-900/20 bg-transparent !important;
+    &:focus{
+        @apply  bg-primary-100/20 border-primary-500 placeholder-primary-500 text-primary-500 outline-none ring-0 !important;
+    }
+}
+.dark .select2-dropdown .select2-search__field{
+    @apply   border-neutral-500/50 !important;
+    &:focus{
+        @apply  bg-primary-500/20 text-white  !important;
+    }
 }
 
 
+.select2-container--default .select2-results__option--highlighted[aria-selected]{
+    @apply bg-primary-500/10
+}
+
+
+.select2-container--open .select2-dropdown--below{
+    @apply rounded-sl
+}
+
+.dark .select2-dropdown {
+    @apply bg-neutral-600 ring-white/5  !important
+}
+
+.select2-results__option{
+    @apply  text-neutral-900/70 !important;
+    &:hover {
+        @apply bg-neutral-900/5  !important
+    }
+  
+}
 .dark .select2-results__option{
     @apply  text-white/80 !important;
     &:hover {
@@ -234,9 +201,11 @@ body {
 
 
 .select2-container--default .select2-results__option[aria-selected=true] {
-    @apply bg-transparent  !important;
+    @apply bg-transparent text-neutral-900/70 !important;
 
-   
+    &:hover {
+        @apply bg-neutral-900/5 !important
+    }
 }
 
 .dark .select2-container--default .select2-results__option[aria-selected=true] {
@@ -260,48 +229,10 @@ body {
 
 }
 
+.select2-container--default .select2-results>.select2-results__options:hover::-webkit-scrollbar-thumb {
+    @apply bg-neutral-900/20;
+}
 
 .dark .select2-container--default .select2-results>.select2-results__options:hover::-webkit-scrollbar-thumb {
     @apply bg-white/20;
 }
-
-
-/* Virtual Machine */
-.vm-h-scroll{ 
-    @screen md{
-    max-height: calc(100vh - 300px);
-}
-} 
-
-
-
-
-/*Range Slider Thumb*/ 
-/* Range Handle */
-.range-slider__range {
-
-
-  &:active::-webkit-slider-thumb {
-    @apply bg-color-1;
-  }
-
-
-  &:active::-moz-range-thumb {
-    @apply bg-color-1;
-  }
-  
-  /* Focus state */
-  &:focus {
-    
-    &::-webkit-slider-thumb {
-     @apply shadow-1;
-    }
-  } 
- }
- 
-
-
-
-
-
-

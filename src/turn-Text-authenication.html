@@ -192,21 +192,21 @@
                             clip-rule="evenodd" />
                     </svg>
                 </button>
-                    <aside :class="{ 'block': isOpen, 'hidden': !isOpen }" @click.away="isOpen = true" x-show.transition="true"
+                    <aside :class="{ 'block': isOpen, 'hidden': !isOpen }" @click.away="isOpen = false" x-show.transition="true"
                         class="md:col-span-4 lg:col-span-3 hidden md:flex flex-col flex-1 max-h-full md:max-h-inherit fixed md:static inset-0 p-5 md:p-0 z-50 bg-neutral-900/80 md:bg-transparent">
                         <div
-                            class="shadow-7 dark:shadow-8 w-full flex-1 max-w-sm mx-auto md:max-w-full md:ml-0 overflow-y-auto md:overflow-y-visible on-hover-scroll max-h-full md:max-h-screen bg-white dark:bg-color-1 rounded-sl flex flex-col divide-y divide-neutral-900/10 dark:divide-neutral-500/10">
+                            class="shadow-7 dark:shadow-8 w-full flex-1 max-w-sm mx-auto md:max-w-full md:ml-0 overflow-y-auto md:overflow-y-visible on-hover-scroll max-h-full md:max-h-screen bg-white dark:bg-color-1 rounded-sl flex flex-col divide-y divide-neutral-900/10 dark:divide-neutral-900/60 md:pb-110">
                             <ul class="p-7 flex flex-col gap-5">
                                 <li><a href="javascript:void(0)"
-                                        class="font-normal text-lg text-neutral-700 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-500 transition-all ease-in-out duration-300">General</a>
+                                        class="font-semibold text-lg text-neutral-700 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-500 transition-all ease-in-out duration-300">General</a>
                                 </li>
-                                <li class="" x-data="{ isOpen: true }" @keydown.escape="isOpen = false"><button
+                                <li class="" x-data="{ isOpen: false }" @keydown.escape="isOpen = false"><button
                                         type="button" @click="isOpen = !isOpen"
-                                        class="font-bold text-lg text-neutral-700 dark:text-neutral-500 outline-none hover:text-primary-500 dark:hover:text-primary-500 transition-all ease-in-out duration-300">Security</button>
-                                    <div class="flex-col gap-3 pl-5 pt-3" @click.away="isOpen = true"
+                                        class="font-normal text-lg text-neutral-700 dark:text-neutral-500 outline-none hover:text-primary-500 dark:hover:text-primary-500 transition-all ease-in-out duration-300">Security</button>
+                                    <div class="flex-col gap-3 pl-5 pt-3" @click.away="isOpen = false"
                                         x-show.transition="true" :class="{ 'flex': isOpen, 'hidden': !isOpen }">
                                         <a href="javascript:void(0)"
-                                            class="font-semibold text-lg text-neutral-700 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-500 transition-all ease-in-out duration-300">Change
+                                            class="font-normal text-lg text-neutral-700 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-500 transition-all ease-in-out duration-300">Change
                                             Password</a>
                                         <a href="javascript:void(0)"
                                             class="font-normal text-lg text-neutral-700 dark:text-neutral-500 hover:text-primary-500 dark:hover:text-primary-500 transition-all ease-in-out duration-300">Two-Factor
@@ -234,7 +234,7 @@
                         <h1 class="sr-only">Internet Server Error</h1>
                         <div class="flex flex-col gap-10">
                             <div
-                                class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl flex flex-col divide-y divide-neutral-900/10 dark:divide-neutral-500/10">
+                                class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl flex flex-col divide-y divide-neutral-900/10 dark:divide-neutral-900/60">
                                 <!-- Card heading -->
                                 <div class="p-3 sm:p-7">
                                     <h2 class="font-bold text-neutral-900 dark:text-neutral-50 text-xl tracking-wider uppercase truncate">
@@ -242,30 +242,24 @@
                                 </div>
                                 <!-- Card Content -->
                                 <div class="p-3 sm:p-7">
-                                    <form action="#" method="POST" class="grid grid-cols-1 gap-y-5">
-                                        <div class="flex flex-col xs:grid xs:grid-cols-12 gap-2 xs:gap-5 xs:items-center">
-                                          <label for="full-name" class="col-span-4 text-neutral-900 dark:text-neutral-500 font-medium text-lg  ">Old Password</label>
-                                          <input type="text" name="full-name" id="full-name" autocomplete="name" class="col-span-8 appearance-none bg-transparent block py-3 px-4 border border-neutral-900/10 dark:border-neutral-500/40 text-neutral-900/50 dark:text-neutral-500/70 w-full focus:bg-primary-100/20 dark:focus:bg-primary-900/5 focus:border-primary-500 dark:focus:border-primary-500 dark:focus:placeholder-primary-500 focus:placeholder-primary-500 focus:text-primary-500 dark:focus:text-primary-500 rounded-sl transition-all duration-500 ease-in-out focus:ring-0 outline-none" >
-                                        </div>
-                                        
-                                        <div class="flex flex-col xs:grid xs:grid-cols-12 gap-2 xs:gap-5 xs:items-center">
-                                            <label for="username"  class="col-span-4 text-neutral-900 dark:text-neutral-500 font-medium text-lg  ">New Password</label>
-                                            <input type="text" name="username" id="username" autocomplete="username" class="col-span-8 appearance-none bg-transparent block py-3 px-4 border border-neutral-900/10 dark:border-neutral-500/40 text-neutral-900/50 dark:text-white/30 w-full focus:bg-primary-100/20 dark:focus:bg-primary-900/5 focus:border-primary-500 dark:focus:border-primary-500 dark:focus:placeholder-primary-500 focus:placeholder-primary-500 focus:text-primary-500 dark:focus:text-primary-500 rounded-sl transition-all duration-500 ease-in-out focus:ring-0 outline-none" >
-                                          </div>
-
-                                        <div class="flex flex-col xs:grid xs:grid-cols-12 gap-2 xs:gap-5 xs:items-center">
-                                          <label for="email" class="col-span-4 text-neutral-900 dark:text-neutral-500 font-medium text-lg  ">Confirm Password</label>
-                                          <input id="email" name="email" type="email" autocomplete="email" class="col-span-8 appearance-none bg-transparent block py-3 px-4 border border-neutral-900/10 dark:border-neutral-500/40 text-neutral-900/50 dark:text-white/30 w-full focus:bg-primary-100/20 dark:focus:bg-primary-900/5 focus:border-primary-500 dark:focus:border-primary-500 dark:focus:placeholder-primary-500 focus:placeholder-primary-500 focus:text-primary-500 dark:focus:text-primary-500 rounded-sl transition-all duration-500 ease-in-out focus:ring-0 outline-none" >
-                                        </div> 
-                                        <div class="flex justify-end w-full sm:pt-5">
-                                          <button type="submit" class="flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-sl text-white bg-primary-500 hover:bg-primary-800 md:py-4 lg:text-lg lg:px-10 transition-all ease-in-out duration-300">
-                                            Save Changes
-                                          </button>
-                                        </div>
-                                      </form>
+                                   <div>
+                                       <h2 class="text-base font-medium text-neutral-900">Authenticator app code <span class="text-xs text-primary-500">(Recommended)</span></h2>
+                                       <p class="text-xs text-neutral-400 py-2">You'll get a code from your security app.</p>
+                                   </div>
+                                   <div class="mt-5">
+                                    <h2 class="text-base font-medium text-neutral-900">Use Text Message</h2>
+                                    <p class="text-xs text-neutral-400 py-1">Receive a six digit code by text message to confirm it’s you.</p>
                                 </div>
+                                <div class="flex justify-end w-full  sm:pt-22">
+                                    <button type="submit" class="flex items-center justify-center px-6 py-2  text-base font-medium rounded-sl text-white bg-primary-500 hover:bg-primary-800 md:py-4 lg:text-lg lg:px-10 transition-all ease-in-out duration-300">
+                                      Save Changes
+                                    </button>
+                                  </div>
+                                </div>
+                               
+    
                             </div>
-
+                          
                          
 
 
@@ -274,6 +268,7 @@
                     </section>
                 </div>
             </div>
+
 
 
 
@@ -345,6 +340,40 @@
 
                         </div>
 
+                    </div>
+
+                    <div x-show="showModal" class="fixed inset-0 z-50 flex items-center justify-center py-10 bg-black bg-opacity-80 no-pointer-events">
+                        <!--Dialog-->
+                        <div class="max-w-sm w-full px-5 mx-auto h-full flex justify-center items-center" x-show="showModal" @click.away="showModal = false" x-transition:enter="ease-out duration-300" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="ease-in duration-300" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90">
+
+                            <!--Title-->
+                            <div class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl  relative flex flex-col w-full max-h-full py-4 px-10">
+
+                                <div class="p-3 sm:p-5 justify-center flex items-center ">
+                                    <h2 class="font-semibold text-neutral-900 dark:text-neutral-50 text-base leading-none truncate text-center uppercase">
+                                        Turn This On?</h2>
+                                   
+
+                                </div>
+
+                                <div class="text-center">
+                                    <p class="text-sm font-normal">Two-factor authenication protects your account by requiring an additional code when you log in on a device we don’t recognize.</p>
+                                </div>
+                                <div class="flex justify-center w-full sm:pt-5 py-4">
+                                    <button type="submit" class="flex items-center justify-center px-6 py-2 border border-transparent   rounded-sl text-white bg-primary-500 hover:bg-primary-800 md:py-3  transition-all ease-in-out duration-300">
+                                        Turn on App Authenication
+                                    </button>
+                                  </div>
+                                  <div class="flex justify-center w-full ">
+                                    <button type="submit" class="flex items-center justify-center px-6 py-4 border border-transparent   rounded-sl text-black font-medium bg-neutral-100 hover:bg-primary-800 md:py-2  hover:text-white transition-all ease-in-out duration-300">
+                                        Dismiss
+                                    </button>
+                                  </div>
+                            
+                            
+
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Footer Bottom -->

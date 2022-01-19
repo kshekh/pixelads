@@ -17,6 +17,7 @@
     "@fontsource/inter": "^4.5.1",
     "@ryangjchandler/alpine-tooltip": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
+    "@tailwindcss/line-clamp": "^0.3.0",
     "alpinejs": "^2.6.0",
     "apexcharts": "^3.32.0",
     "flag-icon-css": "^4.1.7",
@@ -24,6 +25,7 @@
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
     "postcss-nesting": "^10.0.3",
+    "swiper": "^7.4.1",
     "tippy.js": "^6.3.7",
     "typeface-poppins": "^1.1.13"
   }

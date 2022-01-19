@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="assets/dist/img/favicon.svg">
+    <title>Pixelads</title>
+
+    <!-- Inter Fonts -->
+    <link href="../node_modules/@fontsource/inter/variable.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/css/intlTelInput.css" />
+
+    <!-- Tailwind CSS -->
+    <link href="assets/dist/css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="dark:bg-neutral-800 bg-color-10">
+
+
+    <!-- whole page wrapper -->
+    <div class="overflow-hidden flex flex-col min-h-screen">
+        <!-- Header -->
+
+        <nav class="bg-white dark:bg-neutral-900 relative z-20" x-data="{ isOpen: false }" @keydown.escape="isOpen = false">
+            <div class="max-w-screen-wrap mx-auto px-3 wrap:px-5">
+                <div class="flex items-center justify-between sm:h-18 py-3 sm:py-0">
+                    <div class="flex flex-wrap md:flex-nowrap flex-1 items-center gap-3 sm:gap-5 wrap:gap-10">
+                        <div class="flex-shrink-0">
+                            <img class="h-8 w-auto sm:h-10 dark:hidden" src="assets/dist/img/logo-lg.svg" alt="">
+                            <img class="h-8 w-auto sm:h-10 hidden dark:block" src="assets/dist/img/logo-dark.svg"
+                                alt="">
+                        </div>
+
+                        <div class="relative w-full sm:w-auto order-2 sm:order-none">
+                            <label for="price" class="block text-sm font-medium text-gray-700 sr-only">Price</label>
+                            <div class="relative ">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <span class="text-neutral-900/80 dark:text-white/60 sm:text-sm">
+                                        <svg class="w-4" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M8.16536 15.5002C9.85753 15.5002 11.4131 14.9181 12.6543 13.9528L16.6839 17.9825L17.9801 16.6863L13.9504 12.6567C14.9166 11.4146 15.4987 9.859 15.4987 8.16683C15.4987 4.12341 12.2088 0.833496 8.16536 0.833496C4.12195 0.833496 0.832031 4.12341 0.832031 8.16683C0.832031 12.2102 4.12195 15.5002 8.16536 15.5002ZM8.16536 2.66683C11.1986 2.66683 13.6654 5.13358 13.6654 8.16683C13.6654 11.2001 11.1986 13.6668 8.16536 13.6668C5.13211 13.6668 2.66536 11.2001 2.66536 8.16683C2.66536 5.13358 5.13211 2.66683 8.16536 2.66683Z"
+                                                fill="currentColor" fill-opacity="0.8" />
+                                        </svg>
+
+                                    </span>
+                                </div>
+                                <input type="text" name="price" id="price"
+                                    class="appearance-none bg-transparent py-2 pr-4 pl-10 block border border-neutral-900/10 dark:border-neutral-500/20 text-neutral-900/50 dark:text-white/30 w-full focus:bg-primary-100/20 dark:focus:bg-primary-900/5 focus:border-primary-500 dark:focus:border-primary-500 dark:focus:placeholder-primary-500 focus:placeholder-primary-500 focus:text-primary-500 dark:focus:text-primary-500 rounded-sl transition-all duration-500 ease-in-out focus:ring-0 outline-none md:w-52 lg:w-auto"
+                                    placeholder="Search">
+
+                            </div>
+                        </div>
+
+                        <div class="hidden md:block ml-auto ">
+                            <div class="flex items-baseline space-x-1">
+                                <a href="#"
+                                    class="dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white px-3 py-2 text-sm font-medium">Find
+                                    Projects</a>
+                                <a href="#"
+                                    class="dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white px-3 py-2 text-sm font-medium">Find
+                                    Projects</a>
+                            </div>
+                        </div>
+
+                        <div class="flex md:hidden ml-auto">
+                            <!-- Mobile menu button -->
+                            <button type="button"
+                                class="bg-neutral-100 dark:bg-neutral-700 inline-flex items-center justify-center p-2 rounded-md text-neutral-600 dark:text-white  hover:bg-neutral-200 outline-none"
+                                aria-controls="mobile-menu" aria-expanded="false" @click="isOpen = !isOpen">
+                                <span class="sr-only">Open main menu</span>
+                                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"
+                                    :class="{ 'hidden': isOpen}">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" aria-hidden="true" :class="{ 'hidden': !isOpen}">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-4 flex items-center md:ml-6">
+                            <!-- Profile dropdown -->
+                            <div class="ml-3 relative" x-data="{ dropdown: false }"
+                                x-bind:class="{ 'is-active': dropdown }">
+                                <div>
+                                    <button type="button"
+                                        class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm  outline-none  relative overflow-visible"
+                                        id="user-menu-button" aria-expanded="false" aria-haspopup="true"
+                                        @click="dropdown = true">
+                                        <span class="sr-only">Open user menu</span>
+                                        <img class="h-10 w-10 rounded-full"
+                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                        <span
+                                            class="ring-white dark:ring-neutral-900 ring-2 sm:ring-3 rounded-full w-2 h-2 bg-success-500 absolute block bottom-1 right-0"></span>
+                                    </button>
+                                </div>
+                                <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-neutral-900 ring-1 ring-black/5 dark:ring-neutral-700/50  focus:outline-none"
+                                    role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                                    tabindex="-1" @click.away="dropdown = false" id="dropdown-menu" x-show="dropdown"
+                                    x-transition:enter="transition ease-in-out duration-300"
+                                    x-transition:enter-start="transform opacity-0 scale-95"
+                                    x-transition:enter-end="transform opacity-100 scale-100"
+                                    x-transition:leave="transition ease-in-out duration-300"
+                                    x-transition:leave-start="transform opacity-100 scale-100"
+                                    x-transition:leave-end="transform opacity-0 scale-95">
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800/95"
+                                        role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800/95"
+                                        role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white hover:bg-neutral-50 dark:hover:bg-neutral-800/95"
+                                        role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state. -->
+            <div class="md:hidden" id="mobile-menu" :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
+                @click.away="isOpen = false" x-show.transition="true">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                    <a href="#"
+                        class="dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white px-3 py-2 text-sm font-medium">Find
+                        Projects</a>
+                    <a href="#"
+                        class="dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white px-3 py-2 text-sm font-medium">Find
+                        Projects</a>
+                </div>
+                <div class="pt-4 pb-3 border-t border-neutral-900/10 dark:border-neutral-500/20">
+                    <div class="flex items-center px-5">
+                        <div class="flex-shrink-0 relative">
+                            <img class="h-10 w-10 rounded-full"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt="">
+                            <span
+                                class="ring-white dark:ring-neutral-900 ring-2 sm:ring-3 rounded-full w-2 h-2 bg-success-500 absolute block bottom-1 right-0"></span>
+                        </div>
+                        <div class="ml-3">
+                            <div class="text-sm font-medium leading-none dark:text-white/80 text-neutral-600">Tom Cook
+                            </div>
+                            <div class="text-xs font-medium leading-none dark:text-white/50 text-neutral-600/60">
+                                tom@example.com</div>
+                        </div>
+
+                    </div>
+                    <div class="mt-3 px-2 space-y-1">
+                        <a href="#"
+                            class="block dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white px-3 py-2 text-sm font-medium">Your
+                            Profile</a>
+
+                        <a href="#"
+                            class="block dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white px-3 py-2 text-sm font-medium">Settings</a>
+
+                        <a href="#"
+                            class="block dark:text-white/80 text-neutral-600 hover:text-primary-500 dark:hover:text-white px-3 py-2 text-sm font-medium">Sign
+                            out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <main class="flex flex-1 flex-col py-10 ">
+
+            <div
+                class="max-w-screen-wrap w-full mx-auto px-3 wrap:px-5 relative flex flex-col flex-1 gap-10 items-center ">
+                <!-- Description -->
+                <section class="flex flex-col w-full">
+                    <h1 class="sr-only">Description</h1>
+                    <div class="flex flex-col md:grid md:grid-cols-2 gap-5 ml:gap-10 w-full">
+                        <div class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl flex flex-col ">
+                            <!-- Wall -->
+                            <div class="overflow-hidden h-36 rounded-t-sl">
+                                <img src="assets/dist/img/wall.svg" class="object-cover h-full w-full">
+                            </div>
+
+                            <!-- Details -->
+                            <div class="flex-1 flex-col flex px-4 ml:px-7">
+                                <!-- Photo -->
+                                <div class="relative flex flex-wrap flex-col-reverse items-center gap-3 justify-center">
+                                    <!-- Freelancer Level -->
+                                    <p
+                                        class="bg-neutral-900 dark:bg-neutral-50 text-white dark:text-neutral-900 py-1.5 px-3 rounded-full text-sm font-light xs:absolute xs:top-4 xs:left-0">
+                                        Pro Freelancer</p>
+                                    <p
+                                        class="bg-primary-500 text-white  py-1.5 px-3 rounded-full text-sm font-light xs:absolute xs:top-4 xs:left-0 hidden">
+                                        Level 2</p>
+                                    <p
+                                        class="bg-error-400 text-white  py-1.5 px-3 rounded-full text-sm font-light xs:absolute xs:top-4 xs:left-0 hidden">
+                                        New</p>
+                                    <div
+                                        class="h-24 w-24 ml:h-34 ml:w-34 overflow-hidden rounded-full ring-4 ring-white dark:ring-color-1 -mt-12 ml:-mt-16">
+                                        <img class="inline-block h-24 w-24 ml:h-34 ml:w-34 rounded-full ring-2 ring-white"
+                                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                    </div>
+
+                                    <!-- Status -->
+                                    <p
+                                        class="bg-success-100 rounded-full py-1.5 px-3 text-success-600 border border-success-500 text-sm font-medium absolute top-4 right-0 z-10 ">
+                                        Online</p>
+                                    <p
+                                        class="bg-neutral-100 rounded-full py-1.5 px-3 text-neutral-600 border border-neutral-500 text-sm font-medium absolute top-4 right-0 z-10 hidden">
+                                        Offline</p>
+                                    <p
+                                        class="bg-warning-100 rounded-full py-1.5 px-3 text-warning-600 border border-warning-500 text-sm font-medium absolute top-4 right-0 z-10 hidden">
+                                        Away</p>
+
+
+                                </div>
+
+                                <!-- Informations  -->
+                                <!-- Freelancer Other details -->
+                                <h3
+                                    class="font-bold text-neutral-900 dark:text-neutral-50 text-xl lg:text-2xl xl:text-3xl pt-5 line-clamp-2 text-center">
+                                    Michael Smith</h3>
+                                <p class="text-neutral-600 dark:text-neutral-500 pt-1 line-clamp-2 text-center">Web
+                                    Designing, WordPress, Web Development</p>
+
+                                <!-- rattings -->
+                                <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 pt-4">
+                                    <div class="rating flex-nowrap items-center justify-center w-30 relative">
+                                        <!-- On Default -->
+                                        <div class="relative flex flex-nowrap h-8 opacity-25 dark:hidden">
+                                            <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                        </div>
+                                        <!-- On Dark -->
+                                        <div class="relative hidden dark:flex flex-nowrap h-8 opacity-25">
+                                            <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                            <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                        </div>
+
+                                        <!-- Ratting grow with % percentage -->
+                                        <div class="overflow-hidden absolute top-0 left-0" style="width:70%">
+                                            <div class="relative flex flex-nowrap h-8 w-30">
+                                                <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-neutral-600 dark:text-neutral-500 text-md">5.00 <span
+                                            class="opacity-70">(2 reviews)</span></p>
+                                </div>
+
+
+                            </div>
+
+
+
+
+                            <!-- Edit -->
+                            <div class="flex justify-center w-full pt-4 sm:pt-8 mt-auto mb-0">
+                                <button type="submit"
+                                    class="flex gap-3 w-full items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-b-sl hover:text-white bg-primary-100 dark:bg-primary-900 hover:bg-primary-500 dark:hover:bg-primary-800 text-primary-500 dark:text-primary-300 dark:hover:text-white md:py-4 lg:text-lg lg:px-10 transition-all ease-in-out duration-300">
+                                    <svg class="w-4" viewBox="0 0 19 19" fill="none">
+                                        <path
+                                            d="M15.9883 0.012207L18.9885 3.01251L16.7017 5.29926L13.7015 2.29895L15.9883 0.012207Z"
+                                            fill="currentColor" />
+                                        <path d="M5 13.9999H8L15.287 6.71289L12.287 3.71289L5 10.9999V13.9999Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M16 17H5.158C5.132 17 5.105 17.01 5.079 17.01C5.046 17.01 5.013 17.001 4.979 17H2V3H8.847L10.847 1H2C0.897 1 0 1.896 0 3V17C0 18.104 0.897 19 2 19H16C17.104 19 18 18.104 18 17V8.332L16 10.332V17Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    <span>Edit Profile</span>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Descriptions section -->
+                        <div
+                            class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl divide-y divide-neutral-900/10 dark:divide-neutral-900/60">
+                            <div class="flex flex-col flex-1">
+                                <!-- Card heading -->
+                                <div class="p-3 sm:p-7 justify-between flex items-start">
+                                    <h2
+                                        class="font-bold text-neutral-900 dark:text-neutral-50 text-2xl leading-none truncate">
+                                        Describtion</h2>
+
+
+                                </div>
+                                <div class="p-3 pt-0 sm:p-7 sm:pt-0">
+                                    <p class="text-neutral-900 dark:text-neutral-500 ">I am the Creative Director of a
+                                        creative multidisciplinary agency based in Poland with a young team full of
+                                        fresh ideas that are always open to innovation and collaboration. We are a
+                                        diverse team driven by a passion for design and commitment to our work. I am the
+                                        Creative Director of a creative multidisciplinary agency based in Poland with a
+                                        young team full of fresh ideas that are always open to innovation and
+                                        collaboration. We are a diverse team driven by a passion for design and
+                                        commitment to our work.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col flex-1">
+                                <!-- Card heading -->
+                                <div class="p-3 sm:p-7 justify-between flex items-start">
+                                    <h2
+                                        class="font-bold text-neutral-900 dark:text-neutral-50 text-2xl leading-none truncate">
+                                        Skills</h2>
+
+                                </div>
+                                <div class="p-3 pt-0 sm:p-7 sm:pt-0 flex flex-wrap gap-2 ">
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="Java">Java</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="dev-ops">dev-ops</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="developer">developer</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="PHP">PHP</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="PHP">Python</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="PHP">HTML5</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="Java">Java</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="dev-ops">dev-ops</p>
+                                    <p class="p-2 px-3 whitespace-nowrap text-neutral-600 dark:text-neutral-50 rounded-ml bg-primary-100/70 dark:bg-neutral-600/40 text-md leading-none"
+                                        title="developer">developer</p>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <!-- Experience & Education-->
+                <section class="flex flex-col w-full">
+                    <h2 class="sr-only">Activity</h2>
+
+                    <div class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl">
+                        <!-- Card heading -->
+                        <div class="p-3 sm:p-7 justify-between flex items-start">
+                            <h3 class="font-bold text-neutral-900 dark:text-neutral-50 text-2xl leading-none truncate">
+                                Activity</h3>
+
+                        </div>
+
+                        <div class="p-3 pt-0 sm:p-7 sm:pt-0">
+                            <dl
+                                class="space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 xl:gap-x-20">
+
+                                <div class="relative min-h-24">
+                                    <dt>
+                                        <div
+                                            class="xs:absolute flex items-center justify-center h-24 w-24 rounded-sl overflow-hidden bg-indigo-500 text-white">
+                                            <img src="assets/dist/img/game-card-2.png" alt=""
+                                                class="object-fill aspect-square w-full h-full ">
+
+                                        </div>
+                                        <p
+                                            class="xs:ml-30 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 pt-2">
+                                            Was great working with RZ. Professional. delivered on time</p>
+                                    </dt>
+                                    <dd class="mt-2 xs:ml-30 text-sm text-neutral-600/80 dark:text-neutral-500/80">
+                                        John smith reviewed
+                                    </dd>
+                                </div>
+
+                                <div class="relative min-h-24">
+                                    <dt>
+                                        <div
+                                            class="xs:absolute flex items-center justify-center h-24 w-24 rounded-sl overflow-hidden bg-indigo-500 text-white">
+                                            <img src="assets/dist/img/game-card-1.png" alt=""
+                                                class="object-fill aspect-square w-full h-full ">
+
+                                        </div>
+                                        <p
+                                            class="xs:ml-30 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 pt-2">
+                                            Was great working with RZ. Professional. delivered on time</p>
+                                    </dt>
+                                    <dd class="mt-2 xs:ml-30 text-sm text-neutral-600/80 dark:text-neutral-500/80">
+                                        John smith reviewed
+                                    </dd>
+                                </div>
+
+                                <div class="relative min-h-24">
+                                    <dt>
+                                        <div
+                                            class="xs:absolute flex items-center justify-center h-24 w-24 rounded-sl overflow-hidden bg-indigo-500 text-white">
+                                            <img src="assets/dist/img/game-card-3.png" alt=""
+                                                class="object-fill aspect-square w-full h-full ">
+
+                                        </div>
+                                        <p
+                                            class="xs:ml-30 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 pt-2">
+                                            Was great working with RZ. Professional. delivered on time</p>
+                                    </dt>
+                                    <dd class="mt-2 xs:ml-30 text-sm text-neutral-600/80 dark:text-neutral-500/80">
+                                        John smith reviewed
+                                    </dd>
+                                </div>
+                                <div class="relative min-h-24">
+                                    <dt>
+                                        <div
+                                            class="xs:absolute flex items-center justify-center h-24 w-24 rounded-sl overflow-hidden bg-indigo-500 text-white">
+                                            <img src="assets/dist/img/game-card-4.png" alt=""
+                                                class="object-fill aspect-square w-full h-full ">
+
+                                        </div>
+                                        <p
+                                            class="xs:ml-30 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 pt-2">
+                                            Was great working with RZ. Professional. delivered on time</p>
+                                    </dt>
+                                    <dd class="mt-2 xs:ml-30 text-sm text-neutral-600/80 dark:text-neutral-500/80">
+                                        John smith reviewed
+                                    </dd>
+                                </div>
+
+                            </dl>
+                        </div>
+
+                        <div
+                            class="flex-1 mt-5 flex justify-center items-center py-2 border-t border-neutral-900/10 dark:border-neutral-900/60">
+                            <a href="#"
+                                class="flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-sl  text-primary-500 hover:text-primary-600 md:py-4 md:text-lg md:px-10 transition-all ease-in-out duration-300">
+                                Load More Activity
+                            </a>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="flex flex-col w-full">
+                    <h2 class="sr-only">Experience & Education</h2>
+                    <div class="flex flex-col md:grid md:grid-cols-2 gap-5 ml:gap-10 w-full">
+                        <div class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl">
+                            <div class="p-3 pb-0 sm:p-7 sm:pb-0 justify-between flex items-center">
+                                <h2
+                                    class="font-bold text-neutral-900 dark:text-neutral-50 text-2xl leading-none truncate">
+                                    Experience</h2>
+                          
+
+                            </div>
+                            <div class="p-3 sm:p-7">
+
+                                <dl class="space-y-8">
+
+                                    <div class="flex justify-between items-start gap-3">
+                                        <div class="relative ">
+                                            <dt>
+                                                <div
+                                                    class="absolute flex items-center justify-center h-14 w-14 rounded-sl bg-primary-100 dark:bg-primary-500 dark:text-white text-sm text-neutral-900">
+                                                    Logo
+                                                </div>
+                                                <p
+                                                    class="ml-20 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 ">
+                                                    Full stack web developer</p>
+                                            </dt>
+                                            <dd
+                                                class="mt-1 ml-20 text-base text-neutral-600/80 dark:text-neutral-500/80">
+                                                <p>Company Name</p>
+                                                <p class="text-neutral-600/70 dark:text-neutral-500/70 text-sm">Dec
+                                                    2020-Present</p>
+                                            </dd>
+                                        </div>
+                                       
+
+
+                                    </div>
+
+                                    <div class="flex justify-between items-start gap-3">
+                                        <div class="relative ">
+                                            <dt>
+                                                <div
+                                                    class="absolute flex items-center justify-center h-14 w-14 rounded-sl bg-primary-100 dark:bg-primary-500 dark:text-white text-sm text-neutral-900">
+                                                    Logo
+                                                </div>
+                                                <p
+                                                    class="ml-20 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 ">
+                                                    Full stack web developer</p>
+                                            </dt>
+                                            <dd
+                                                class="mt-1 ml-20 text-base text-neutral-600/80 dark:text-neutral-500/80">
+                                                <p>Company Name</p>
+                                                <p class="text-neutral-600/70 dark:text-neutral-500/70 text-sm">Dec
+                                                    2020-Present</p>
+                                            </dd>
+                                        </div>
+                                    
+
+
+                                    </div>
+
+                                    <div class="flex justify-between items-start gap-3">
+                                        <div class="relative ">
+                                            <dt>
+                                                <div
+                                                    class="absolute flex items-center justify-center h-14 w-14 rounded-sl bg-primary-100 dark:bg-primary-500 dark:text-white text-sm text-neutral-900">
+                                                    Logo
+                                                </div>
+                                                <p
+                                                    class="ml-20 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 ">
+                                                    Full stack web developer</p>
+                                            </dt>
+                                            <dd
+                                                class="mt-1 ml-20 text-base text-neutral-600/80 dark:text-neutral-500/80">
+                                                <p>Company Name</p>
+                                                <p class="text-neutral-600/70 dark:text-neutral-500/70 text-sm">Dec
+                                                    2020-Present</p>
+                                            </dd>
+                                        </div>
+                        
+
+                                    </div>
+
+
+
+                                </dl>
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+                        <div class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl">
+                            <div class="p-3 pb-0 sm:p-7 sm:pb-0 justify-between flex items-center">
+                                <h2
+                                    class="font-bold text-neutral-900 dark:text-neutral-50 text-2xl leading-none truncate">
+                                    Education</h2>
+                          
+
+                            </div>
+                            <div class="p-3 sm:p-7">
+
+                                <dl class="space-y-8">
+
+                                    <div class="flex justify-between items-start gap-3">
+                                        <div class="relative ">
+                                            <dt>
+                                                <div
+                                                    class="absolute flex items-center justify-center h-14 w-14 rounded-sl bg-primary-100 dark:bg-primary-500 dark:text-white text-sm text-neutral-900">
+                                                    Logo
+                                                </div>
+                                                <p
+                                                    class="ml-20 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 ">
+                                                    Green River College</p>
+                                            </dt>
+                                            <dd
+                                                class="mt-1 ml-20 text-base text-neutral-600/80 dark:text-neutral-500/80">
+                                                <p>User Experience Designer</p>
+                                                <p class="text-neutral-600/70 dark:text-neutral-500/70 text-sm">2018 -
+                                                    2020</p>
+                                            </dd>
+                                        </div>
+                                    
+
+
+                                    </div>
+
+                                    <div class="flex justify-between items-start gap-3">
+                                        <div class="relative ">
+                                            <dt>
+                                                <div
+                                                    class="absolute flex items-center justify-center h-14 w-14 rounded-sl bg-primary-100 dark:bg-primary-500 dark:text-white text-sm text-neutral-900">
+                                                    Logo
+                                                </div>
+                                                <p
+                                                    class="ml-20 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 ">
+                                                    Full stack web developer</p>
+                                            </dt>
+                                            <dd
+                                                class="mt-1 ml-20 text-base text-neutral-600/80 dark:text-neutral-500/80">
+                                                <p>Company Name</p>
+                                                <p class="text-neutral-600/70 dark:text-neutral-500/70 text-sm">Dec
+                                                    2020-Present</p>
+                                            </dd>
+                                        </div>
+                            
+                                    </div>
+
+                                    <div class="flex justify-between items-start gap-3">
+                                        <div class="relative ">
+                                            <dt>
+                                                <div
+                                                    class="absolute flex items-center justify-center h-14 w-14 rounded-sl bg-primary-100 dark:bg-primary-500 dark:text-white text-sm text-neutral-900">
+                                                    Logo
+                                                </div>
+                                                <p
+                                                    class="ml-20 text-lg leading-6 font-medium text-neutral-800 dark:text-neutral-500 ">
+                                                    Full stack web developer</p>
+                                            </dt>
+                                            <dd
+                                                class="mt-1 ml-20 text-base text-neutral-600/80 dark:text-neutral-500/80">
+                                                <p>Company Name</p>
+                                                <p class="text-neutral-600/70 dark:text-neutral-500/70 text-sm">Dec
+                                                    2020-Present</p>
+                                            </dd>
+                                        </div>
+                     
+                                    </div>
+
+
+
+                                </dl>
+
+
+
+
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </section>
+
+
+                <!-- Client Reviews -->
+                <section class="shadow-7 dark:shadow-8 bg-white dark:bg-color-1 rounded-sl">
+
+                    <div class="p-3 pb-0 sm:p-7 sm:pb-0 justify-between flex items-start">
+                        <h3 class="font-bold text-neutral-900 dark:text-neutral-50 text-2xl leading-none truncate">
+                            Client Reviews</h3>
+
+                    </div>
+                    <div class="divide-y divide-dark/10 dark:divide-white/10 ">
+
+                        <div class="w-full p-3 sm:p-7">
+                            <div class="flex justify-between flex-wrap gap-3">
+                                <div class="flex flex-col gap-3">
+                                    <!-- Rating -->
+                                    <div class="flex flex-wrap justify-start items-center gap-x-3 gap-y-1">
+                                        <div class="rating flex-nowrap items-center justify-center w-30 relative">
+                                            <!-- On Default -->
+                                            <div class="relative flex flex-nowrap h-8 opacity-25 dark:hidden">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                            </div>
+                                            <!-- On Dark -->
+                                            <div class="relative hidden dark:flex flex-nowrap h-8 opacity-25">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                            </div>
+
+                                            <!-- Ratting grow with % percentage -->
+                                            <div class="overflow-hidden absolute top-0 left-0" style="width:70%">
+                                                <div class="relative flex flex-nowrap h-8 w-30">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-neutral-600 dark:text-neutral-500 text-md">5.0</p>
+                                    </div>
+                                    <div class="">
+                                        <h4 class="text-neutral-800 dark:text-neutral-500 font-semibold">Was great
+                                            working with RZ. Professional. delivered on time</h4>
+                                        <p class="text-sm text-neutral-800 dark:text-neutral-500 pt-2">John Smith <span
+                                                class="text-neutral-600 dark:text-neutral-500/60">reviewed</span> RZ
+                                            Ruman</p>
+                                    </div>
+                                </div>
+                                <!-- Date -->
+                                <div class="text-neutral-600 dark:text-neutral-500 text-xs sm:text-right ml-auto mr-0">
+                                    <span class="block">Wed Dec 30 2021</span>
+
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="flex flex-col gap-4 pt-2">
+                                <p class="text-neutral-600 dark:text-neutral-500 text-sm leading-relaxed">We are working
+                                    with Syed now on a dating app project and he's fabulous!! Not only is he quick in
+                                    making changes but he's very flexible and able to work hours that accommodate our
+                                    schedule, making it easy for us to get things done. Also, his quality of his work is
+                                    top notch and I would definitely say he's one of the best out there.</p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="w-full p-3 sm:p-7">
+                            <div class="flex justify-between flex-wrap gap-3">
+                                <div class="flex flex-col gap-3">
+                                    <!-- Rating -->
+                                    <div class="flex flex-wrap justify-start items-center gap-x-3 gap-y-1">
+                                        <div class="rating flex-nowrap items-center justify-center w-30 relative">
+                                            <!-- On Default -->
+                                            <div class="relative flex flex-nowrap h-8 opacity-25 dark:hidden">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star.svg" class="w-6" alt="">
+                                            </div>
+                                            <!-- On Dark -->
+                                            <div class="relative hidden dark:flex flex-nowrap h-8 opacity-25">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                                <img src="assets/dist/img/stars/star-white.svg" class="w-6" alt="">
+                                            </div>
+
+                                            <!-- Ratting grow with % percentage -->
+                                            <div class="overflow-hidden absolute top-0 left-0" style="width:70%">
+                                                <div class="relative flex flex-nowrap h-8 w-30">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                    <img src="assets/dist/img/stars/star-rated.svg" class="w-6" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p class="text-neutral-600 dark:text-neutral-500 text-md">5.0</p>
+                                    </div>
+                                    <div class="">
+                                        <h4 class="text-neutral-800 dark:text-neutral-500 font-semibold">Was great
+                                            working with RZ. Professional. delivered on time</h4>
+                                        <p class="text-sm text-neutral-800 dark:text-neutral-500 pt-2">John Smith <span
+                                                class="text-neutral-600 dark:text-neutral-500/60">reviewed</span> RZ
+                                            Ruman</p>
+                                    </div>
+                                </div>
+                                <!-- Date -->
+                                <div class="text-neutral-600 dark:text-neutral-500 text-xs sm:text-right ml-auto mr-0">
+                                    <span class="block">Wed Dec 30 2021</span>
+
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div class="flex flex-col gap-4 pt-2">
+                                <p class="text-neutral-600 dark:text-neutral-500 text-sm leading-relaxed">We are working
+                                    with Syed now on a dating app project and he's fabulous!! Not only is he quick in
+                                    making changes but he's very flexible and able to work hours that accommodate our
+                                    schedule, making it easy for us to get things done. Also, his quality of his work is
+                                    top notch and I would definitely say he's one of the best out there.</p>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="flex-1 mt-5 flex justify-center items-center py-2 border-t border-neutral-900/10 dark:border-neutral-900/60">
+                            <a href="#"
+                                class="flex items-center justify-center px-6 py-2 border border-transparent text-base font-medium rounded-sl  text-primary-500 hover:text-primary-600 md:py-4 md:text-lg md:px-10 transition-all ease-in-out duration-300">
+                                Load More Reviews
+                            </a>
+                        </div>
+                    </div>
+
+
+
+                </section>
+
+
+
+
+
+
+
+
+
+            </div>
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="bg-neutral-900">
+            <div class="max-w-screen-wrap px-3 warp:px-5 mx-auto w-full">
+                <div class="flex flex-col divide-y divide-neutral-700/90">
+                    <!-- Footer Top -->
+                    <div
+                        class="md:grid md:grid-cols-3 flex flex-col max-w-sm mx-auto md:max-w-full gap-10 md:gap-5 lg:gap-10 xl:gap-20 py-10 xl:py-14">
+                        <div class="text-left flex-col flex gap-4">
+                            <h4 class="text-2xl font-bold text-neutral-50">About</h4>
+                            <p class="text-neutral-500 text-sm leading-snug md:pr-5 lg:pr-12">1st advertisement site for
+                                your projects Digital advertising site for amateurs and professionals in the multimedia,
+                                web and gaming fields created by enthusiasts. Join us quickly and #AdopteUnProjet.</p>
+                        </div>
+
+                        <div class="text-left flex-col flex gap-4 lg:pl-5 xl:pl-10">
+                            <h4 class="text-2xl font-bold text-neutral-50">Legal information</h4>
+                            <div class="flex flex-col gap-3">
+                                <a href="javascript:void(0)"
+                                    class="text-neutral-500 hover:text-primary-400 transition-all ease-in-out duration-300 text-sm leading-snug">CGU</a>
+                                <a href="javascript:void(0)"
+                                    class="text-neutral-500 hover:text-primary-400 transition-all ease-in-out duration-300 text-sm leading-snug">CGV</a>
+                            </div>
+
+                        </div>
+
+                        <div class="text-left flex-col flex gap-4">
+                            <h4 class="text-2xl font-bold text-neutral-50">Social networks</h4>
+                            <p class="text-neutral-500 text-sm leading-snug">Follow us on social networks to be informed
+                                of the latest announcements!</p>
+                            <div class="flex gap-4">
+                                <a href="javascript:void(0)"
+                                    class="bg-neutral-600 hover:bg-primary-500 text-neutral-50 rounded-full w-12 h-12 flex justify-center items-center transition-all ease-in-out duration-300 text-sm leading-snug"><svg
+                                        class="h-4" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M6.39703 17.9972V9.80115H9.16203L9.57303 6.59215H6.39703V4.54815C6.39703 3.62215 6.65503 2.98815 7.98403 2.98815H9.66803V0.12715C8.84903 0.0391501 8.02503 -0.00285004 7.20103 0.000149963C4.75703 0.000149963 3.07903 1.49215 3.07903 4.23115V6.58615H0.332031V9.79515H3.08503V17.9972H6.39703Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                                <a href="javascript:void(0)"
+                                    class="bg-neutral-600 hover:bg-primary-500 text-neutral-50 rounded-full w-12 h-12 flex justify-center items-center transition-all ease-in-out duration-300 text-sm leading-snug"><svg
+                                        class="h-4" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M17.633 3.99655C17.646 4.17155 17.646 4.34556 17.646 4.51956C17.646 9.84455 13.593 15.9806 6.186 15.9806C3.904 15.9806 1.784 15.3196 0 14.1716C0.324 14.2086 0.636 14.2216 0.973 14.2216C2.856 14.2216 4.589 13.5856 5.974 12.5006C4.203 12.4636 2.719 11.3036 2.207 9.70755C2.456 9.74455 2.706 9.76956 2.968 9.76956C3.329 9.76956 3.692 9.71956 4.029 9.63256C2.182 9.25855 0.799 7.63755 0.799 5.67955V5.62955C1.336 5.92855 1.959 6.11555 2.619 6.14055C1.534 5.41855 0.823 4.18355 0.823 2.78655C0.823 2.03855 1.022 1.35255 1.371 0.754555C3.354 3.19755 6.335 4.79455 9.677 4.96955C9.615 4.66955 9.577 4.35855 9.577 4.04655C9.577 1.82655 11.373 0.0185547 13.605 0.0185547C14.765 0.0185547 15.812 0.504555 16.548 1.29055C17.458 1.11555 18.33 0.778554 19.104 0.317554C18.805 1.25255 18.168 2.03855 17.333 2.53755C18.144 2.44955 18.93 2.22555 19.652 1.91355C19.104 2.71155 18.419 3.42255 17.633 3.99655Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </a>
+                                <a href="javascript:void(0)"
+                                    class="bg-neutral-600 hover:bg-primary-500 text-neutral-50 rounded-full w-12 h-12 flex justify-center items-center transition-all ease-in-out duration-300 text-sm leading-snug"><svg
+                                        class="h-4" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.99995 4.37695C6.44595 4.37695 4.37695 6.44695 4.37695 8.99995C4.37695 11.554 6.44595 13.624 8.99995 13.624C11.552 13.624 13.623 11.554 13.623 8.99995C13.623 6.44695 11.552 4.37695 8.99995 4.37695ZM8.99995 12.004C7.34095 12.004 5.99595 10.659 5.99595 9.00095C5.99595 7.34195 7.34095 5.99795 8.99995 5.99795C10.659 5.99795 12.002 7.34195 12.002 9.00095C12.002 10.659 10.659 12.004 8.99995 12.004Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M13.8046 5.28491C14.3999 5.28491 14.8826 4.80227 14.8826 4.20691C14.8826 3.61154 14.3999 3.12891 13.8046 3.12891C13.2092 3.12891 12.7266 3.61154 12.7266 4.20691C12.7266 4.80227 13.2092 5.28491 13.8046 5.28491Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M17.533 3.11088C17.064 1.90188 16.109 0.945883 14.9 0.478883C14.201 0.215883 13.462 0.0748827 12.714 0.0588827C11.751 0.0168827 11.446 0.00488281 9.00395 0.00488281C6.56195 0.00488281 6.24895 0.00488271 5.29395 0.0588827C4.54795 0.0738827 3.80895 0.214883 3.10995 0.478883C1.89995 0.945883 0.944953 1.90188 0.476953 3.11088C0.213953 3.81088 0.0729531 4.54888 0.0579531 5.29688C0.0149531 6.25888 0.00195312 6.56388 0.00195312 9.00688C0.00195312 11.4489 0.00195312 11.7599 0.0579531 12.7169C0.0729531 13.4649 0.213953 14.2029 0.476953 14.9039C0.945953 16.1119 1.90095 17.0679 3.11095 17.5359C3.80695 17.8079 4.54595 17.9619 5.29595 17.9859C6.25895 18.0279 6.56395 18.0409 9.00595 18.0409C11.448 18.0409 11.761 18.0409 12.716 17.9859C13.463 17.9709 14.202 17.8289 14.902 17.5669C16.111 17.0979 17.066 16.1429 17.535 14.9339C17.798 14.2339 17.939 13.4959 17.954 12.7479C17.997 11.7859 18.01 11.4809 18.01 9.03788C18.01 6.59488 18.01 6.28488 17.954 5.32788C17.941 4.56988 17.801 3.81888 17.533 3.11088ZM16.315 12.6429C16.308 13.2189 16.204 13.7899 16.004 14.3309C15.699 15.1179 15.078 15.7399 14.292 16.0419C13.757 16.2409 13.193 16.3449 12.622 16.3529C11.672 16.3969 11.404 16.4079 8.96795 16.4079C6.52995 16.4079 6.28095 16.4079 5.31295 16.3529C4.74395 16.3459 4.17795 16.2409 3.64395 16.0419C2.85495 15.7409 2.22995 15.1189 1.92495 14.3309C1.72895 13.7969 1.62295 13.2319 1.61395 12.6619C1.57095 11.7119 1.56095 11.4439 1.56095 9.00788C1.56095 6.57088 1.56095 6.32188 1.61395 5.35288C1.62095 4.77688 1.72495 4.20688 1.92495 3.66588C2.22995 2.87688 2.85495 2.25588 3.64395 1.95388C4.17795 1.75588 4.74395 1.65088 5.31295 1.64288C6.26395 1.59988 6.53095 1.58788 8.96795 1.58788C11.405 1.58788 11.655 1.58788 12.622 1.64288C13.193 1.64988 13.757 1.75488 14.292 1.95388C15.078 2.25688 15.699 2.87888 16.004 3.66588C16.2 4.19988 16.306 4.76488 16.315 5.33488C16.358 6.28588 16.369 6.55288 16.369 8.98988C16.369 11.4259 16.369 11.6879 16.326 12.6439H16.315V12.6429Z"
+                                            fill="currentColor" />
+                                    </svg>
+
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Footer Bottom -->
+                    <div class="mt-auto flex flex-col xs:flex-row justify-between gap-5 py-6 items-center">
+                        <div
+                            class="flex flex-col sm:flex-row gap-3 sm:gap-5 items-center xs:items-start sm:items-center">
+                            <div class="flex justify-start">
+                                <a href="index.html">
+                                    <span class="sr-only">Pixelads</span>
+                                    <img class="h-8 sm:h-10 block" src="assets/dist/img/logo-dark.svg" alt="">
+                                </a>
+                            </div>
+                            <p class="text-neutral-500 text-sm">Copyright © 2021 Pixelads.fr</p>
+                        </div>
+                        <!-- Theme mode change button -->
+                        <button type="button" title="Change theme mode"
+                            class="mode transition-all ease-in-out duration-30 flex justify-between gap-0 relative text-white bg-neutral-600 rounded-full w-36 text-sm uppercase">
+                            <span class="relative z-10 w-1/2 py-1.5 block">Light</span> <span
+                                class="relative z-10 w-1/2 py-1.5 block">Dark</span>
+
+                            <span
+                                class="checked-label inset-y-0 w-1/2 absolute transform left-0 bg-primary-500 rounded-full transition-all ease-in-out duration-300"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+
+
+
+    <script src="../node_modules/alpinejs/dist/alpine.js"></script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/16.0.8/js/intlTelInput-jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var code = "+34"; // Assigning value from model.
+            $('#phone-number').val(code);
+            $('#phone-number').intlTelInput({
+                autoHideDialCode: true,
+                autoPlaceholder: "ON",
+                dropdownContainer: document.body,
+                formatOnDisplay: true,
+                hiddenInput: "full_number",
+                initialCountry: "auto",
+                nationalMode: true,
+                placeholderNumberType: "MOBILE",
+                preferredCountries: ['France'],
+                separateDialCode: true
+            });
+            $('#btnSubmit').on('click', function () {
+                var code = $("#phone-number").intlTelInput("getSelectedCountryData").dialCode;
+                var phoneNumber = $('#phone-number').val();
+                var name = $("#phone-number").intlTelInput("getSelectedCountryData").name;
+                alert('Country Code : ' + code + '\nPhone Number : ' + phoneNumber + '\nCountry Name : ' + name);
+            });
+        });
+    </script>
+
+    <script>
+
+
+        // Theme mode updater
+        var el = document.querySelector('.mode');
+
+        el.onclick = function () {
+            document.documentElement.classList.toggle('dark');
+            document.querySelector(".checked-label").classList.toggle("translate-x-full");
+
+        }
+
+
+        // Photo Uplpoad
+        function photoUpload() {
+            return {
+                previewUrl: "",
+                updatePreview() {
+                    var reader,
+                        files = document.getElementById("thumbnail").files;
+
+                    reader = new FileReader();
+
+                    reader.onload = e => {
+                        this.previewUrl = e.target.result;
+                    };
+
+                    reader.readAsDataURL(files[0]);
+                },
+                clearPreview() {
+                    document.getElementById("thumbnail").value = null;
+                    this.previewUrl = "";
+                }
+            };
+        }
+
+
+    </script>
+
+</body>
+
+</html>
