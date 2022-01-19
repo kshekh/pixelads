@@ -1041,6 +1041,12 @@ select {
 .w-8 {
   width: 2rem;
 }
+.w-16 {
+  width: 4rem;
+}
+.w-28 {
+  width: 7rem;
+}
 .max-w-screen-wrap {
   max-width: 1210px;
 }
@@ -1064,6 +1070,12 @@ select {
 }
 .max-w-screen-lg {
   max-width: 1024px;
+}
+.max-w-xl {
+  max-width: 36rem;
+}
+.max-w-lg {
+  max-width: 32rem;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -1521,6 +1533,10 @@ select {
 .bg-color-6 {
   --tw-bg-opacity: 1;
   background-color: rgb(0 172 238 / var(--tw-bg-opacity));
+}
+.bg-neutral-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(197 200 221 / var(--tw-bg-opacity));
 }
 .bg-opacity-80 {
   --tw-bg-opacity: 0.8;
@@ -2757,12 +2773,21 @@ select {
     position: absolute;
   }
 
+  .xs\:inset-y-0 {
+    top: 0px;
+    bottom: 0px;
+  }
+
   .xs\:top-4 {
     top: 1rem;
   }
 
   .xs\:left-0 {
     left: 0px;
+  }
+
+  .xs\:right-0 {
+    right: 0px;
   }
 
   .xs\:col-span-3 {
@@ -2833,6 +2858,10 @@ select {
     align-items: center;
   }
 
+  .xs\:items-stretch {
+    align-items: stretch;
+  }
+
   .xs\:justify-start {
     justify-content: flex-start;
   }
@@ -2883,6 +2912,10 @@ select {
     padding-top: 0.75rem;
   }
 
+  .xs\:pt-0 {
+    padding-top: 0px;
+  }
+
   .xs\:text-left {
     text-align: left;
   }
@@ -2904,6 +2937,15 @@ select {
 }
 @media (min-width: 640px) {
 
+  .sm\:absolute {
+    position: absolute;
+  }
+
+  .sm\:inset-y-0 {
+    top: 0px;
+    bottom: 0px;
+  }
+
   .sm\:bottom-4 {
     bottom: 1rem;
   }
@@ -2914,6 +2956,10 @@ select {
 
   .sm\:-top-10 {
     top: -2.5rem;
+  }
+
+  .sm\:right-0 {
+    right: 0px;
   }
 
   .sm\:order-none {

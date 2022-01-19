@@ -247,22 +247,34 @@
                                        <h2 class="text-base font-medium text-neutral-900 dark:text-white">Authenticator app code <span class="text-xs text-primary-500">(Recommended)</span></h2>
                                        <p class="text-sm text-neutral-900/60 dark:text-neutral-500/60 pt-1">You'll get a code from your security app.</p>
                                        </div>
-                                      <div> <span aria-hidden="true" class="flex items-center w-10 h-6 rounded-full relative transition-all ease-in-out duration-300 bg-primary-500 pl-1">
-                                        <span class="relative transform z-10 block h-4 w-4 rounded-full bg-white transition-all ease-in-out duration-300 translate-x-full" :class="checked ? 'translate-x-full' : 'translate-x-0'"></span>
+                                       <div class="flex flex-col gap-2 " x-data="{checked : true}">
+                                        <input class="sr-only" type="checkbox" id="activer" x-model="checked">
+                                        <label class="flex items-center gap-5" for="activer">
+                                          
+                                            <span aria-hidden="true" class="flex items-center w-10 h-6 rounded-full relative transition-all ease-in-out duration-300  pl-1" :class="checked ? 'bg-primary-500' : 'bg-neutral-300'">
+                                                <span class="relative transform z-10 block h-4 w-4 rounded-full bg-white transition-all ease-in-out duration-300  " :class="checked ? 'translate-x-full' : 'translate-x-0'"></span>
 
-                                    </span></div>
+                                            </span>
+
+                                        </label>
+                                    </div>
                                    </div>
                                    <div class="mt-5 flex justify-between">
                                        <div>
                                     <h2 class="text-base font-medium text-neutral-900 dark:text-white">Use Text Message</h2>
                                     <p class="text-sm text-neutral-900/60 dark:text-neutral-500/60 pt-1 ">Receive a six digit code by text message to confirm it’s you.</p>
                                 </div>
-                                <div> 
-                                    <span aria-hidden="true" class="flex items-center w-10 h-6 rounded-full relative transition-all ease-in-out duration-300 bg-primary-500 pl-1">
-                                        <span class="relative transform z-10 block h-4 w-4 rounded-full bg-white transition-all ease-in-out duration-300 translate-x-full" :class="checked ? 'translate-x-full' : 'translate-x-0'"></span>
+                                <div class="flex flex-col gap-2 " x-data="{checked : true}">
+                                    <input class="sr-only" type="checkbox" id="message" x-model="checked" >
+                                    <label class="flex items-center gap-5" for="message">
+                                      
+                                        <span aria-hidden="true" class="flex items-center w-10 h-6 rounded-full relative transition-all ease-in-out duration-300 bg-primary-500 pl-1" :class="checked ? 'bg-primary-500' : 'bg-neutral-300'">
+                                            <span class="relative transform z-10 block h-4 w-4 rounded-full bg-white transition-all ease-in-out duration-300 " :class="checked ? 'translate-x-full' : 'translate-x-0'"></span>
 
-                                    </span>
-                            </div>
+                                        </span>
+
+                                    </label>
+                                </div>
                                 </div>
                                 <div class="flex justify-end w-full  sm:pt-22">
                                     <button type="submit" class="flex items-center justify-center px-6 py-2  text-base font-medium rounded-sl text-white bg-primary-500 hover:bg-primary-800 md:py-4 lg:text-lg lg:px-10 transition-all ease-in-out duration-300">
